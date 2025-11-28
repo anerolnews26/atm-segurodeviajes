@@ -4,7 +4,7 @@ ATM Seguros - Sitio estático (3 páginas)
 
 Archivos listos para publicar en GitHub Pages (GRATIS) o Netlify (GRATIS).
 
-Google Form insertado: https://forms.gle/ZwyxnW6yYDwMJX7x8
+Google Form insertado: [https://forms.gle/ZwyxnW6yYDwMJX7x8](https://forms.gle/ZwyxnW6yYDwMJX7x8)
 
 Pasos rápidos para publicar en GitHub (sin conocimientos avanzados):
 
