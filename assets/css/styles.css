@@ -1,0 +1,16 @@
+
+:root{--accent:#0a66c2;--maxw:1100px;font-family:Inter,Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;color:#111;background:#fff}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid #eee}
+.logo{height:48px}
+nav a{margin:0 8px;text-decoration:none;color:#111}
+.banner{padding:48px 24px;text-align:center;max-width:var(--maxw);margin:0 auto}
+.banner h1{font-size:28px;margin:0 0 8px}
+.banner p{margin:0 0 16px}
+.cta{display:inline-block;padding:12px 20px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+.value-grid{display:flex;gap:16px;max-width:var(--maxw);margin:24px auto;padding:0 16px}
+.value-grid .col{flex:1;padding:12px;border-radius:8px;background:#f9f9f9;text-align:center}
+.plan{max-width:var(--maxw);margin:20px auto;padding:16px;border-radius:8px;border:1px solid #eee}
+footer{padding:16px;text-align:center;border-top:1px solid #f0f0f0}
+@media(max-width:700px){.value-grid{flex-direction:column}}
