@@ -1,16 +1,209 @@
+/* ============================
+   PALETA ATM (colores del logo)
+   ============================ */
+:root {
+  --blue: #003A70;        /* azul del logo */
+  --orange: #FF7A00;      /* naranja del logo */
+  --text-dark: #111;
+  --text-light: #fff;
+  --bg-light: #f9f9f9;
+  --maxw: 1100px;
 
-:root{--accent:#0a66c2;--maxw:1100px;font-family:Inter,Arial,Helvetica,sans-serif}
-*{box-sizing:border-box}
-body{margin:0;color:#111;background:#fff}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid #eee}
-.logo{height:48px}
-nav a{margin:0 8px;text-decoration:none;color:#111}
-.banner{padding:48px 24px;text-align:center;max-width:var(--maxw);margin:0 auto}
-.banner h1{font-size:28px;margin:0 0 8px}
-.banner p{margin:0 0 16px}
-.cta{display:inline-block;padding:12px 20px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
-.value-grid{display:flex;gap:16px;max-width:var(--maxw);margin:24px auto;padding:0 16px}
-.value-grid .col{flex:1;padding:12px;border-radius:8px;background:#f9f9f9;text-align:center}
-.plan{max-width:var(--maxw);margin:20px auto;padding:16px;border-radius:8px;border:1px solid #eee}
-footer{padding:16px;text-align:center;border-top:1px solid #f0f0f0}
-@media(max-width:700px){.value-grid{flex-direction:column}}
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+/* ============================
+   HEADER
+   ============================ */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 26px;
+  border-bottom: 2px solid rgba(0, 58, 112, 0.1);
+  background: #fff;
+}
+
+.logo {
+  height: 55px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--blue);
+  transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--orange);
+}
+
+.lang-btn {
+  background: var(--orange);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lang-btn:hover {
+  background: #e96e00;
+}
+
+/* ============================
+   BANNER (HERO)
+   ============================ */
+.banner {
+  position: relative;
+  padding: 80px 24px;
+  text-align: center;
+  color: var(--text-light);
+  background: url("../img/hero-bg.jpg") center/cover no-repeat,
+              linear-gradient(to bottom right, var(--blue), #00264b);
+}
+
+.banner h1 {
+  font-size: 34px;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+
+.banner p {
+  font-size: 18px;
+  margin: 0 0 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BOTÓN CTA */
+.cta {
+  display: inline-block;
+  padding: 14px 24px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
+  transition: 0.25s ease;
+}
+
+.cta:hover {
+  background: #e96e00;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   VALUE CARDS
+   ============================ */
+.value-grid {
+  display: flex;
+  gap: 20px;
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.value-card,
+.value-grid .col {
+  flex: 1;
+  padding: 20px;
+  border-radius: 14px;
+  background: var(--bg-light);
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.value-card h3,
+.value-grid .col h3 {
+  margin-top: 0;
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ============================
+   DESTINOS
+   ============================ */
+.backing {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.backing h4 {
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+
+.destination-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dest-card {
+  background: var(--orange);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(255, 122, 0, 0.35);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: #f1f5f9;
+  text-align: center;
+  border-top: 2px solid rgba(0, 58, 112, 0.15);
+  color: #333;
+}
+
+.mini-logo {
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+footer a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 700px) {
+  .value-grid {
+    flex-direction: column;
+  }
+
+  .banner h1 {
+    font-size: 26px;
+  }
+}
