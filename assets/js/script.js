@@ -1,16 +1,48 @@
+// -------------------------------
+// CAMBIO DE IDIOMA ES / EN
+// -------------------------------
 
-// Traducción muy simple: busca todos los elementos con atributos data-es y data-en
-(function(){
-  const toggle = document.getElementById('lang-toggle');
-  function setLang(lang){
-    document.documentElement.lang = (lang==='en')? 'en':'es';
-    document.querySelectorAll('[data-es]').forEach(el=>{
-      el.textContent = (lang==='en')? el.getAttribute('data-en') : el.getAttribute('data-es');
+// Detectar idioma guardado o usar ES por defecto
+let currentLang = localStorage.getItem("lang") || "es";
+
+// Esperar a que cargue el DOM
+document.addEventListener("DOMContentLoaded", () => {
+
+  const langButton = document.getElementById("lang-toggle");
+
+  if (langButton) {
+    // Mostrar el botón dependiendo del idioma actual
+    langButton.textContent = currentLang.toUpperCase() === "ES" ? "ES / EN" : "EN / ES";
+
+    // Evento de cambio de idioma
+    langButton.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      localStorage.setItem("lang", currentLang);
+      applyTranslations();
     });
-    // guarda preferencia
-    localStorage.setItem('site-lang',lang);
   }
-  const saved = localStorage.getItem('site-lang') || (navigator.language && navigator.language.startsWith('en')? 'en':'es');
-  setLang(saved);
-  toggle && toggle.addEventListener('click',()=> setLang(document.documentElement.lang==='en' ? 'es' : 'en'));
-})();
+
+  // Aplicar el idioma al cargar
+  applyTranslations();
+});
+
+
+// -------------------------------
+// FUNCIÓN QUE APLICA LAS TRADUCCIONES
+// -------------------------------
+function applyTranslations() {
+  document.documentElement.setAttribute("data-lang", currentLang);
+
+  // Seleccionar todos los elementos traducibles
+  const translatable = document.querySelectorAll("[data-es][data-en]");
+
+  translatable.forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+
+  // Actualizar el texto del botón si existe
+  const langButton = document.getElementById("lang-toggle");
+  if (langButton) {
+    langButton.textContent = currentLang === "es" ? "ES / EN" : "EN / ES";
+  }
+}
