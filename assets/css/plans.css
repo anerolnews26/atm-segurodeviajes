@@ -1,0 +1,44 @@
+.plans-page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.plan {
+  margin: 32px 0;
+  padding: 24px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.plan-img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 8px;
+  margin: 16px auto;
+  display: block;
+}
+
+.coverage {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.plan ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.plan li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.note {
+  font-size: 16px;
+  color: #444;
+}
