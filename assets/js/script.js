@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Aplicar traducciones cuando carga
+  // Aplicar traducciones al cargar
   applyTranslations();
 });
 
