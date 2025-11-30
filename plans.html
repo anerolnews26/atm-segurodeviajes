@@ -11,6 +11,7 @@
     <!-- CSS específico de esta página -->
     <link rel="stylesheet" href="assets/css/plans.css">
 </head>
+
 <body>
 
 <header class="site-header">
@@ -21,7 +22,7 @@
             <a href="index.html">Home</a>
             <a href="plans.html" class="active">Planes</a>
             <a href="how-it-works.html">Cómo Funciona</a>
-            <button id="lang-toggle" class="lang-btn">EN / ES</button>
+            <button id="lang-toggle" class="lang-btn"></button>
         </nav>
     </div>
 </header>
@@ -29,20 +30,174 @@
 
 <main class="plans-page">
 
-<!-- PLAN PREMIER -->
+<!-- ============================
+     PLAN PREMMED
+============================ -->
 <section class="plan">
+
     <img src="assets/img/premmed.jpg" class="plan-img" alt="Plan Premmed">
 
     <h2 data-es="PLAN PREMMED" data-en="PREMMED PLAN">PLAN PREMMED</h2>
 
     <h3 data-es="Cobertura Global:" data-en="Global Coverage:">Cobertura Global:</h3>
-    <p class="coverage">€ 300.000</p>
+    <p class="coverage">€ 30.000</p>
 
     <h3 data-es="Beneficios:" data-en="Benefits:">Beneficios:</h3>
 
     <ul>
-        <li data-es="Asistencia médica por accidente" data-en="Medical assistance for accidents">
+        <li data-es="Asistencia médica por accidente" 
+            data-en="Medical assistance for accidents">
             Asistencia médica por accidente
         </li>
 
-        <li data-es="Asistencia médica por enfermedad no preexistente" data-en="Medical assistance for non-
+        <li data-es="Asistencia médica por enfermedad no preexistente" 
+            data-en="Medical assistance for non-preexisting illness">
+            Asistencia médica por enfermedad no preexistente
+        </li>
+
+        <li data-es="Asistencia médica por COVID-19" 
+            data-en="Medical assistance for COVID-19">
+            Asistencia médica por COVID-19
+        </li>
+
+        <li data-es="Indemnización por extravío de equipaje" 
+            data-en="Lost luggage compensation">
+            Indemnización por extravío de equipaje
+        </li>
+
+        <li data-es="Cancelación e interrupción de viaje" 
+            data-en="Trip cancellation and interruption">
+            Cancelación e interrupción de viaje
+        </li>
+
+        <li data-es="Primera atención por enfermedad preexistente"
+            data-en="First care for preexisting illness">
+            Primera atención por enfermedad preexistente
+        </li>
+
+        <li data-es="Atención por especialistas"
+            data-en="Specialist care">
+            Atención por especialistas
+        </li>
+
+        <li data-es="Medicamentos en atención ambulatoria"
+            data-en="Medication in outpatient care">
+            Medicamentos en atención ambulatoria
+        </li>
+
+        <li data-es="Odontología de urgencia" 
+            data-en="Emergency dental care">
+            Odontología de urgencia
+        </li>
+
+        <li data-es="Reembolso por vuelo demorado" 
+            data-en="Delayed flight reimbursement">
+            Reembolso por vuelo demorado
+        </li>
+
+        <li data-es="Práctica de deportes" 
+            data-en="Sports practice">
+            Práctica de deportes
+        </li>
+
+        <li data-es="Estado de embarazo" 
+            data-en="Pregnancy coverage">
+            Estado de embarazo
+        </li>
+
+        <li data-es="Repatriación sanitaria" 
+            data-en="Medical repatriation">
+            Repatriación sanitaria
+        </li>
+
+        <li data-es="Acompañamiento de menores y mayores"
+            data-en="Escort for minors and seniors">
+            Acompañamiento de menores y mayores
+        </li>
+
+        <li data-es="Gastos de hotel por convalescencia"
+            data-en="Hotel expenses for convalescence">
+            Gastos de hotel por convalescencia
+        </li>
+
+        <li data-es="Transmisión de mensajes urgentes"
+            data-en="Urgent message transmission">
+            Transmisión de mensajes urgentes
+        </li>
+
+        <li data-es="Traslado de un familiar"
+            data-en="Family member transfer">
+            Traslado de un familiar
+        </li>
+
+        <li data-es="Asistencia en caso de robo de documentos"
+            data-en="Assistance for stolen documents">
+            Asistencia en caso de robo de documentos
+        </li>
+
+        <li data-es="Regreso anticipado por siniestro grave"
+            data-en="Early return due to major incident">
+            Regreso anticipado por siniestro grave
+        </li>
+
+        <li data-es="Repatriación de restos mortales"
+            data-en="Repatriation of mortal remains">
+            Repatriación de restos mortales
+        </li>
+
+        <li data-es="Localización de equipaje"
+            data-en="Luggage tracking">
+            Localización de equipaje
+        </li>
+
+        <li data-es="Anticipo de fondo de fianza"
+            data-en="Bail bond advance">
+            Anticipo de fondo de fianza
+        </li>
+
+        <li data-es="Compensación por demora de equipaje"
+            data-en="Delayed luggage compensation">
+            Compensación por demora de equipaje
+        </li>
+    </ul>
+
+</section>
+
+</main>
+
+<!-- ============================
+     SCRIPT DE IDIOMA
+============================ -->
+<script>
+let currentLang = localStorage.getItem("lang") || "es";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const langButton = document.getElementById("lang-toggle");
+
+    if (langButton) {
+        langButton.textContent = currentLang === "es" ? "EN" : "ES";
+
+        langButton.addEventListener("click", () => {
+            currentLang = currentLang === "es" ? "en" : "es";
+            localStorage.setItem("lang", currentLang);
+            langButton.textContent = currentLang === "es" ? "EN" : "ES";
+            applyTranslations();
+        });
+    }
+
+    applyTranslations();
+});
+
+function applyTranslations() {
+    document.querySelectorAll("[data-es]").forEach((el) => {
+        const text = currentLang === "es"
+            ? el.getAttribute("data-es")
+            : el.getAttribute("data-en");
+
+        if (text) el.innerHTML = text;
+    });
+}
+</script>
+
+</body>
+</html>
