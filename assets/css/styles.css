@@ -2,8 +2,8 @@
    PALETA ATM (colores del logo)
    ============================ */
 :root {
-  --blue: #003A70;        /* azul del logo */
-  --orange: #FF7A00;      /* naranja del logo */
+  --blue: #003A70;
+  --orange: #FF7A00;
   --text-dark: #111;
   --text-light: #fff;
   --bg-light: #f9f9f9;
@@ -93,7 +93,7 @@ nav a.active {
   margin-right: auto;
 }
 
-/* BOTÓN CTA */
+/* CTA */
 .cta {
   display: inline-block;
   padding: 14px 24px;
@@ -122,8 +122,7 @@ nav a.active {
   padding: 0 16px;
 }
 
-.value-card,
-.value-grid .col {
+.value-card {
   flex: 1;
   padding: 20px;
   border-radius: 14px;
@@ -133,8 +132,7 @@ nav a.active {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.value-card h3,
-.value-grid .col h3 {
+.value-card h3 {
   margin-top: 0;
   color: var(--blue);
   font-size: 20px;
@@ -202,33 +200,6 @@ footer a {
   .value-grid {
     flex-direction: column;
   }
-.plans-page {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 24px;
-  text-align: center;
-}
-
-.plan {
-  margin: 32px 0;
-  padding: 24px;
-  background: #fafafa;
-  border-radius: 12px;
-  border: 1px solid #eee;
-}
-
-.plan-img {
-  width: 100%;
-  max-width: 650px;
-  border-radius: 8px;
-  margin: 16px auto;
-  display: block;
-}
-
-.note {
-  font-size: 16px;
-  color: #444;
-}
 
   .banner h1 {
     font-size: 26px;
