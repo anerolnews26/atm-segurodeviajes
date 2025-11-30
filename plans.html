@@ -1,54 +1,68 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Planes ATM / ATM Plans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planes — ATM Seguros de Viaje</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <img src="assets/img/logo.png" alt="ATM Seguros logo" class="logo">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="plans.html" class="active">Plans / Planes</a>
-      <a href="how-it-works.html">How it Works / Cómo Funciona</a>
-      <button id="lang-toggle">EN / ES</button>
-    </nav>
-  </header>
-  <main>
-    <h1>Planes de Asistencia Médica para Cada Viajero</h1>
+<header class="site-header">
+  <img src="assets/img/logo.png" class="logo" alt="ATM">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="plans.html" class="active">Planes / Plans</a>
+    <a href="how-it-works.html">Cómo funciona / How it Works</a>
+    <button id="lang-toggle">EN / ES</button>
+  </nav>
+</header>
 
-    <article class="plan">
-      <h2>Plan SCHENMED (€) — Schengen</h2>
-      <p>Cobertura en Euros para cumplir requisitos del espacio Schengen.</p>
-      <ul>
-        <li>Cobertura Global</li>
-        <li>Repatriación</li>
-        <li>Asistencia COVID-19</li>
-        <li>Práctica de Deportes</li>
-        <li>Atención 24/7</li>
-      </ul>
-      <a class="cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank">Lo necesito para mi Visa Schengen</a>
-    </article>
+<main class="plans-page">
 
-    <article class="plan">
-      <h2>Plan PREMMED ($) — Work & Travel / Larga Estancia</h2>
-      <p>Opción robusta para Work & Travel, Canadá, Australia y EEUU.</p>
-      <ul>
-        <li>Amplia cobertura médica</li>
-        <li>Flexibilidad de fechas</li>
-        <li>Asistencia COVID-19</li>
-        <li>Cobertura de deportes y actividades</li>
-        <li>Atención multilingüe</li>
-      </ul>
-      <a class="cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank">Lo quiero para mi Work & Travel</a>
-    </article>
-  </main>
+  <h1 data-es="Nuestros Planes" data-en="Our Plans">Nuestros Planes</h1>
+  <p data-es="Seguros para turismo, Work & Travel y visas — válidos para embajada francesa."
+     data-en="Insurance for tourism, Work & Travel and visas — accepted by the French Embassy.">
+     Seguros para turismo, Work & Travel y visas — válidos para embajada francesa.
+  </p>
 
-  <footer>
-    <p>Freelancer — Contacto: <a href="https://wa.me/5491123456789?text=Hola%20quiero%20cotizar%20un%20seguro" target="_blank">WhatsApp</a></p>
-  </footer>
-  <script src="assets/js/script.js"></script>
+  <!-- PLAN 1 -->
+  <section class="plan">
+    <h2 data-es="Plan Premmed" data-en="Premmed Plan">Plan Premmed</h2>
+    <img src="assets/img/premmed.png" alt="Plan Premmed" class="plan-img">
+
+    <p class="note" data-es="Se cotiza según la duración del viaje."
+       data-en="Price depends on travel duration.">
+       Se cotiza según la duración del viaje.
+    </p>
+  </section>
+
+  <!-- PLAN 2 -->
+  <section class="plan">
+    <h2 data-es="Plan Schenmed" data-en="Schenmed Plan">Plan Schenmed</h2>
+    <img src="assets/img/schenmed.png" alt="Plan Schenmed" class="plan-img">
+
+    <p class="note" data-es="Apto para visas Schengen y Work & Travel."
+       data-en="Valid for Schengen and Work & Travel visas.">
+       Apto para visas Schengen y Work & Travel.
+    </p>
+  </section>
+
+  <a class="cta"
+     href="https://forms.gle/ZwyxnW6yYDwMJX7x8"
+     target="_blank"
+     data-es="COTIZAR MI SEGURO"
+     data-en="GET A QUOTE">
+     COTIZAR MI SEGURO
+  </a>
+
+</main>
+
+<footer>
+  <img src="assets/img/logo.png" class="mini-logo">
+  <p>Freelancer — <a href="https://wa.me/5491123456789" target="_blank">WhatsApp</a></p>
+</footer>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>
