@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // ------------------------------
 function applyTranslations() {
   document.querySelectorAll("[data-es]").forEach((el) => {
-    const text = currentLang === "es" ? el.getAttribute("data-es") : el.getAttribute("data-en");
+    const text = currentLang === "es"
+      ? el.getAttribute("data-es")
+      : el.getAttribute("data-en");
+
     if (text) el.innerHTML = text;
   });
 }
