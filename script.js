@@ -1,11 +1,48 @@
-document.getElementById("lang-toggle").addEventListener("click", () => {
-  const html = document.documentElement;
-  const current = html.getAttribute("data-lang");
-  const next = current === "es" ? "en" : "es";
+// -------------------------------
+// CAMBIO DE IDIOMA ES / EN
+// -------------------------------
 
-  html.setAttribute("data-lang", next);
+// Detectar idioma guardado o usar ES por defecto
+let currentLang = localStorage.getItem("lang") || "es";
 
-  document.querySelectorAll("[data-es]").forEach(el => {
-    el.innerText = el.getAttribute(`data-${next}`);
-  });
+// Esperar a que cargue el DOM
+document.addEventListener("DOMContentLoaded", () => {
+
+  const langButton = document.getElementById("lang-toggle");
+
+  if (langButton) {
+    // Mostrar el botón dependiendo del idioma actual
+    langButton.textContent = currentLang.toUpperCase() === "ES" ? "ES / EN" : "EN / ES";
+
+    // Evento de cambio de idioma
+    langButton.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      localStorage.setItem("lang", currentLang);
+      applyTranslations();
+    });
+  }
+
+  // Aplicar el idioma al cargar
+  applyTranslations();
 });
+
+
+// -------------------------------
+// FUNCIÓN QUE APLICA LAS TRADUCCIONES
+// -------------------------------
+function applyTranslations() {
+  document.documentElement.setAttribute("data-lang", currentLang);
+
+  // Seleccionar todos los elementos traducibles
+  const translatable = document.querySelectorAll("[data-es][data-en]");
+
+  translatable.forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+
+  // Actualizar el texto del botón si existe
+  const langButton = document.getElementById("lang-toggle");
+  if (langButton) {
+    langButton.textContent = currentLang === "es" ? "ES / EN" : "EN / ES";
+  }
+}
