@@ -202,6 +202,33 @@ footer a {
   .value-grid {
     flex-direction: column;
   }
+.plans-page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.plan {
+  margin: 32px 0;
+  padding: 24px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.plan-img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 8px;
+  margin: 16px auto;
+  display: block;
+}
+
+.note {
+  font-size: 16px;
+  color: #444;
+}
 
   .banner h1 {
     font-size: 26px;
