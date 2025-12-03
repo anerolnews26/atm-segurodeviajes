@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title data-es="Cómo Funciona — ATM Seguros" data-en="How It Works — ATM Insurance">Cómo Funciona — ATM Seguros</title>
-  <meta name="description" content="Proceso simple: elige tu plan, completa datos y recibe tu póliza. Asistencia 24/7 por ATM Seguros de Viaje.">
+  <meta name="description" content="Proceso simple: elige tu plan, completa datos y recibe tu póliza. Asistencia 24/7.">
 
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/script.js"></script>
@@ -14,11 +14,17 @@
 
 <header class="site-header">
   <div class="header-container">
-    <a href="index.html"><img src="assets/img/logo.png" alt="ATM logo" class="logo" width="150" height="48"></a>
+    <a href="index.html">
+      <picture>
+        <source srcset="assets/img/logo.webp" type="image/webp">
+        <img src="assets/img/logo.jpg" alt="ATM logo" class="logo" width="150" height="48">
+      </picture>
+    </a>
+
     <nav class="main-nav">
-      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="plans.html" data-es="Planes" data-en="Plans">Planes</a>
-      <a href="how-it-works.html" class="active" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
+      <a href="index.html">Inicio</a>
+      <a href="plans.html">Planes</a>
+      <a href="how-it-works.html" class="active">Cómo Funciona</a>
       <button id="lang-toggle" class="lang-btn">ES</button>
     </nav>
   </div>
@@ -26,31 +32,36 @@
 
 <main class="how-container">
   <section class="hiw-intro">
-    <h1 data-es="Cómo funciona" data-en="How it works">Cómo funciona</h1>
-    <p data-es="En 3 pasos simples tendrás tu póliza y cobertura." data-en="In 3 simple steps you'll have your policy and coverage.">En 3 pasos simples tendrás tu póliza y cobertura.</p>
+    <h1>Cómo funciona</h1>
+    <p>En 3 pasos simples tendrás tu póliza y cobertura.</p>
   </section>
 
   <section class="steps-section">
+
     <article class="step">
-      <h3 data-es="1. Elige un plan" data-en="1. Choose a plan">1. Elige un plan</h3>
-      <p data-es="Compara PREMMED y SCHENMED según tus necesidades." data-en="Compare PREMMED and SCHENMED according to your needs.">Compara PREMMED y SCHENMED según tus necesidades.</p>
+      <h3>1. Elige un plan</h3>
+      <p>Compara PREMMED y SCHENMED según tus necesidades.</p>
     </article>
 
     <article class="step">
-      <h3 data-es="2. Completa tus datos" data-en="2. Provide your details">2. Completa tus datos</h3>
-      <p data-es="Un formulario sencillo y seguro para emitir tu póliza." data-en="A simple and secure form to issue your policy.">Un formulario sencillo y seguro para emitir tu póliza.</p>
+      <h3>2. Completa tus datos</h3>
+      <p>Un formulario sencillo y seguro para emitir tu póliza.</p>
     </article>
 
     <article class="step">
-      <h3 data-es="3. Recibe tu póliza" data-en="3. Receive your policy">3. Recibe tu póliza</h3>
-      <p data-es="Recibirás la póliza por email lista para usar en tu viaje." data-en="You will receive the policy by email ready to use on your trip.">Recibirás la póliza por email lista para usar en tu viaje.</p>
+      <h3>3. Recibe tu póliza</h3>
+      <p>La recibirás por email lista para usar en tu viaje.</p>
     </article>
+
   </section>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <img src="assets/img/logo.png" alt="ATM logo" class="mini-logo" width="120" height="36">
+    <picture>
+      <source srcset="assets/img/logo.webp" type="image/webp">
+      <img src="assets/img/logo.jpg" alt="ATM logo" class="mini-logo" width="120" height="36">
+    </picture>
     <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
   </div>
 </footer>
