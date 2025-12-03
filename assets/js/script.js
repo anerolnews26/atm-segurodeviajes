@@ -43,3 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Remove unused nodes (cleanup)
     console.log("ATM website optimized and language applied.");
 });
+const gallery = document.querySelector('.gallery-carousel');
+
+let autoScroll = setInterval(() => {
+    gallery.scrollBy({ left: 260, behavior: 'smooth' });
+}, 3500);
+
+gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
+gallery.addEventListener('mouseleave', () => {
+    autoScroll = setInterval(() => {
+        gallery.scrollBy({ left: 260, behavior: 'smooth' });
+    }, 3500);
+});
+
