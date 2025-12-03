@@ -1,216 +1,233 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title data-es="ATM Seguros de Viaje | La mejor asistencia internacional"
-          data-en="ATM Travel Insurance | Best International Assistance">
-        ATM Seguros de Viaje | La mejor asistencia internacional
-    </title>
+  <title data-es="ATM Seguros de Viaje | Asistencia internacional y cobertura 24/7"
+         data-en="ATM Travel Insurance | International assistance & 24/7 coverage">
+    ATM Seguros de Viaje | Asistencia internacional y cobertura 24/7
+  </title>
 
-    <!-- SEO PRINCIPAL -->
-    <meta name="description"
-          content="Asistencia al viajero internacional para Work & Travel, visas, estudios, turismo y más. Coberturas amplias, precios accesibles y soporte 24/7.">
+  <meta name="description" content="ATM Seguros de Viaje — Cobertura internacional para Work & Travel, Schengen, turismo y estancias largas. PREMMED: USD 350,000 · SCHENMED: €200,000. Asistencia 24/7.">
+  <meta name="keywords" content="seguro de viaje, asistencia al viajero, Schengen, PREMMED, SCHENMED, cobertura médica 24/7">
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="ATM Seguros de Viaje | Asistencia Internacional">
-    <meta property="og:description" content="Protección global para tus viajes. Planes Work & Travel, Europa, Schengen y larga estadía.">
-    <meta property="og:image" content="assets/img/hero-travel.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://anerolnews26.github.io/atm-segurodeviajes/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="ATM Seguros de Viaje — Asistencia internacional">
+  <meta property="og:description" content="PREMMED USD 350,000 · SCHENMED €200,000 — Asistencia 24/7">
+  <meta property="og:image" content="https://anerolnews26.github.io/atm-segurodeviajes/assets/img/hero-travel.webp">
+  <meta property="og:url" content="https://anerolnews26.github.io/atm-segurodeviajes/index.html">
+  <meta property="og:type" content="website">
 
-    <!-- FAVICON -->
-    <link rel="icon" href="assets/img/favicon.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATM Seguros de Viaje">
+  <meta name="twitter:description" content="PREMMED USD 350,000 · SCHENMED €200,000 — Asistencia 24/7">
+  <meta name="twitter:image" content="https://anerolnews26.github.io/atm-segurodeviajes/assets/img/hero-travel.webp">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Preconnect / fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- JS -->
-    <script defer src="assets/js/script.js"></script>
+  <!-- Preload hero (improves LCP) -->
+  <link rel="preload" as="image" href="assets/img/hero-travel.webp">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- JSON-LD (Organization + WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "ATM Seguros de Viaje",
+        "url": "https://anerolnews26.github.io/atm-segurodeviajes/",
+        "logo": "https://anerolnews26.github.io/atm-segurodeviajes/assets/img/logo.png"
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://anerolnews26.github.io/atm-segurodeviajes/",
+        "name": "ATM Seguros de Viaje"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JS -->
+  <script defer src="assets/js/script.js"></script>
 </head>
-
 <body>
 
-<header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
     <div class="header-container">
+      <a href="index.html" class="brand" aria-label="ATM Seguros">
+        <img src="assets/img/logo.png" alt="ATM Seguros logo" class="logo" width="150" height="48" />
+      </a>
 
-        <img src="assets/img/logo.png" alt="ATM Seguros" class="logo" loading="lazy">
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Abrir menú</span>
+        ☰
+      </button>
 
-        <nav class="main-nav">
-            <a href="index.html" class="active" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="plans.html" data-es="Planes" data-en="Plans">Planes</a>
-            <a href="how-it-works.html" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
-            <button id="lang-toggle" class="lang-btn">ES/EN</button>
-        </nav>
-
+      <nav id="main-nav" class="main-nav" role="navigation">
+        <a href="index.html" class="nav-link active" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="plans.html" class="nav-link" data-es="Planes" data-en="Plans">Planes</a>
+        <a href="how-it-works.html" class="nav-link" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
+        <a href="#services" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a>
+        <button id="lang-toggle" class="lang-btn" aria-label="Cambiar idioma">ES</button>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main>
+  <main>
 
-<!-- HERO -->
-<section class="banner">
-    <div class="banner-overlay"></div>
+    <!-- HERO (use <picture> with webp + jpg fallback) -->
+    <section class="hero" aria-label="Hero">
+      <picture>
+        <source type="image/webp" srcset="assets/img/hero-travel.webp 1x, assets/img/hero-travel@2x.webp 2x">
+        <img src="assets/img/hero-travel.jpg" alt="Viajero en aeropuerto mirando tablero" class="hero-img" width="1600" height="900" loading="eager">
+      </picture>
 
-    <div class="banner-content">
-        <h1 data-es="ATM Seguros de Viaje: Asistencia Internacional"
-            data-en="ATM Travel Insurance: International Assistance">
-            ATM Seguros de Viaje: Asistencia Internacional
-        </h1>
-
-        <p data-es="Cobertura global para Work & Travel, Visa, Europa, Schengen, estudiantes y viajes prolongados."
-           data-en="Global coverage for Work & Travel, Visa, Europe, Schengen, students and long-term travel.">
-           Cobertura global para Work & Travel, Visa, Europa, Schengen, estudiantes y viajes prolongados.
+      <div class="hero-content">
+        <h1 data-es="Viaja seguro, vive libre" data-en="Travel safe, live free">Viaja seguro, vive libre</h1>
+        <p data-es="Cobertura internacional para Work & Travel, Schengen, estudios y estancias largas. Asistencia médica 24/7." data-en="International coverage for Work & Travel, Schengen, study and long stays. 24/7 medical assistance.">
+          Cobertura internacional para Work & Travel, Schengen, estudios y estancias largas. Asistencia médica 24/7.
         </p>
 
-        <a class="cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank"
-           data-es="COTIZAR SEGURO"
-           data-en="GET A QUOTE">
-            COTIZAR SEGURO
+        <a class="btn-cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" rel="noopener noreferrer" data-es="COTIZAR AHORA" data-en="GET A QUOTE">
+          COTIZAR AHORA
         </a>
+      </div>
+    </section>
+
+    <!-- VALUE / BENEFITS -->
+    <section class="value-grid" aria-label="Beneficios">
+      <div class="value-card">
+        <img src="assets/img/icon-global.png" alt="Cobertura global" width="56" height="56" loading="lazy">
+        <h3 data-es="Cobertura internacional" data-en="International coverage">Cobertura internacional</h3>
+        <p data-es="Hasta USD 350,000 / €200,000 según plan." data-en="Up to USD 350,000 / €200,000 depending on plan.">Hasta USD 350,000 / €200,000 según plan.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/img/icon-24h.png" alt="Asistencia 24 horas" width="56" height="56" loading="lazy">
+        <h3 data-es="Asistencia 24/7" data-en="24/7 assistance">Asistencia 24/7</h3>
+        <p data-es="Soporte médico y emergencias en cualquier país." data-en="Medical and emergency support worldwide.">Soporte médico y emergencias en cualquier país.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/img/icon-plane.png" alt="Apto para visas" width="56" height="56" loading="lazy">
+        <h3 data-es="Apto para visas" data-en="Visa ready">Apto para visas</h3>
+        <p data-es="Planes aceptados para Schengen y otras visas." data-en="Plans accepted for Schengen and other visas.">Planes aceptados para Schengen y otras visas.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/img/icon-wallet.png" alt="Planes económicos" width="56" height="56" loading="lazy">
+        <h3 data-es="Planes accesibles" data-en="Affordable plans">Planes accesibles</h3>
+        <p data-es="Coberturas claras y personalizables." data-en="Clear and customizable coverages.">Coberturas claras y personalizables.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES / GALLERY CARRUSEL -->
+    <section id="services" class="services-gallery" aria-label="Servicios - Galería">
+      <h2 data-es="Servicios Destacados" data-en="Featured Services">Servicios Destacados</h2>
+
+      <div class="gallery-controls">
+        <button id="gallery-prev" aria-label="Anterior">‹</button>
+        <button id="gallery-next" aria-label="Siguiente">›</button>
+      </div>
+
+      <div class="gallery-carousel" role="list" aria-live="polite">
+        <!-- Each item: data-src/data-srcset used for lazy loading -->
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/disney.webp 1x, assets/img/disney@2x.webp 2x">
+            <img data-src="assets/img/disney.jpg" data-srcset="assets/img/disney.jpg 1x, assets/img/disney@2x.jpg 2x" alt="Viajes en familia" width="600" height="400">
+          </picture>
+          <p>Viajes en familia con total tranquilidad.</p>
+        </div>
+
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/escalar.webp 1x, assets/img/escalar@2x.webp 2x">
+            <img data-src="assets/img/escalar.jpg" data-srcset="assets/img/escalar.jpg 1x, assets/img/escalar@2x.jpg 2x" alt="Aventuras extremas" width="600" height="400">
+          </picture>
+          <p>Aventuras extremas con cobertura global.</p>
+        </div>
+
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/everest.webp 1x, assets/img/everest@2x.webp 2x">
+            <img data-src="assets/img/everest.jpg" data-srcset="assets/img/everest.jpg 1x, assets/img/everest@2x.jpg 2x" alt="Alta montaña" width="600" height="400">
+          </picture>
+          <p>Protección en viajes de alta montaña y expediciones.</p>
+        </div>
+
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/glaciar.webp 1x, assets/img/glaciar@2x.webp 2x">
+            <img data-src="assets/img/glaciar.jpg" data-srcset="assets/img/glaciar.jpg 1x, assets/img/glaciar@2x.jpg 2x" alt="Explorar glaciares" width="600" height="400">
+          </picture>
+          <p>Explora destinos fríos con asistencia garantizada.</p>
+        </div>
+
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/globos.webp 1x, assets/img/globos@2x.webp 2x">
+            <img data-src="assets/img/globos.jpg" data-srcset="assets/img/globos.jpg 1x, assets/img/globos@2x.jpg 2x" alt="Viajes en globo" width="600" height="400">
+          </picture>
+          <p>Experiencias únicas sin preocupaciones.</p>
+        </div>
+
+        <div class="gallery-item" role="listitem">
+          <picture>
+            <source type="image/webp" data-srcset="assets/img/hoian.webp 1x, assets/img/hoian@2x.webp 2x">
+            <img data-src="assets/img/hoian.jpg" data-srcset="assets/img/hoian.jpg 1x, assets/img/hoian@2x.jpg 2x" alt="Hoi An viajes" width="600" height="400">
+          </picture>
+          <p>Viaja por Asia con la mejor asistencia internacional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK PLANS PREVIEW -->
+    <section class="plans-preview" aria-label="Planes destacados">
+      <h2 data-es="Planes Recomendados" data-en="Recommended Plans">Planes Recomendados</h2>
+
+      <div class="plan-cards">
+        <article class="plan-card" aria-labelledby="premmed-title">
+          <picture>
+            <source type="image/webp" srcset="assets/img/plan-premmed.webp 1x, assets/img/plan-premmed@2x.webp 2x">
+            <img src="assets/img/plan-premmed.jpg" alt="Plan PREMMED" width="800" height="520" loading="lazy">
+          </picture>
+          <h3 id="premmed-title">PREMMED</h3>
+          <div class="plan-price">USD <span class="amount">350,000</span></div>
+          <p>Cobertura médica internacional, asistencia 24/7 y repatriación.</p>
+          <a class="btn-cta" href="plans.html#premmed" data-es="Ver detalles" data-en="View details">Ver detalles</a>
+        </article>
+
+        <article class="plan-card" aria-labelledby="schenmed-title">
+          <picture>
+            <source type="image/webp" srcset="assets/img/plan-schenmed.webp 1x, assets/img/plan-schenmed@2x.webp 2x">
+            <img src="assets/img/plan-schenmed.jpg" alt="Plan SCHENMED" width="800" height="520" loading="lazy">
+          </picture>
+          <h3 id="schenmed-title">SCHENMED</h3>
+          <div class="plan-price">€ <span class="amount">200,000</span></div>
+          <p>Plan aprobado para Visa Schengen con cobertura amplia.</p>
+          <a class="btn-cta" href="plans.html#schenmed" data-es="Ver detalles" data-en="View details">Ver detalles</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <img src="assets/img/logo.png" alt="ATM Seguros logo" class="mini-logo" width="120" height="36">
+      <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
     </div>
-</section>
-
-
-<!-- BENEFICIOS PRINCIPALES -->
-<section class="value-grid">
-
-    <div class="value-card">
-        <img src="assets/img/icon-global.png" alt="Cobertura Global">
-        <h3 data-es="Cobertura Internacional" data-en="International Coverage">Cobertura Internacional</h3>
-        <p data-es="Planes válidos para cualquier país del mundo"
-           data-en="Plans valid for any country worldwide">
-           Planes válidos para cualquier país del mundo
-        </p>
-    </div>
-
-    <div class="value-card">
-        <img src="assets/img/icon-24h.png" alt="Asistencia 24 horas">
-        <h3 data-es="Asistencia 24/7" data-en="24/7 Assistance">Asistencia 24/7</h3>
-        <p data-es="Médica, legal, emergencias y más"
-           data-en="Medical, legal, emergencies and more">
-           Médica, legal, emergencias y más
-        </p>
-    </div>
-
-    <div class="value-card">
-        <img src="assets/img/icon-plane.png" alt="Viajes seguros">
-        <h3 data-es="Apto para visas" data-en="Visa Ready">Apto para visas</h3>
-        <p data-es="Cumple requisitos Work & Travel, Europa y Schengen"
-           data-en="Complies with Work & Travel, Europe and Schengen requirements">
-           Cumple requisitos Work & Travel, Europa y Schengen
-        </p>
-    </div>
-
-    <div class="value-card">
-        <img src="assets/img/icon-wallet.png" alt="Precios accesibles">
-        <h3 data-es="Planes accesibles" data-en="Affordable Plans">Planes accesibles</h3>
-        <p data-es="Para turistas y largas estadías"
-           data-en="For tourists & long stays">
-           Para turistas y largas estadías
-        </p>
-    </div>
-
-</section>
-
-</main>
-
-<footer>
-<section class="services-gallery">
-    <h2 data-es="Servicios Destacados" data-en="Featured Services">
-        Servicios Destacados
-    </h2>
-
-    <div class="gallery-carousel">
-
-        <!-- CARD -->
-        <div class="gallery-item">
-            <img src="assets/img/disney.png" alt="Viajes en familia">
-            <p>Viajes en familia con total tranquilidad.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/escalar.png" alt="Aventuras extremas">
-            <p>Aventuras extremas con cobertura global.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/everest.png" alt="Alta montaña">
-            <p>Protección en viajes de alta montaña y expediciones.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/glaciar.png" alt="Explorar glaciares">
-            <p>Explora destinos fríos con asistencia garantizada.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/globos.png" alt="Viajes en globo">
-            <p>Experiencias únicas sin preocupaciones.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/hoian.png" alt="Asia viajes">
-            <p>Viaja por Asia con la mejor asistencia internacional.</p>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="assets/img/japon.png" alt="Japon viajes">
-            <p>Descubre culturas nuevas con respaldo médico 24/7.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/india.png" alt="India seguro">
-            <p>Tu seguridad en cada destino exótico.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/kitesurf.png" alt="Kitesurf viajes">
-            <p>Deportes acuáticos y adrenalina, siempre cubierto.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/maletasperdidas.png" alt="Pérdida de equipaje">
-            <p>Compensación por pérdida de equipaje.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/playaamigos.png" alt="Viajes de playa">
-            <p>Playas, amigos y viajes sin estrés.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/thailand.png" alt="Tailandia aventuras">
-            <p>Aventuras tropicales con protección total.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/pars.png" alt="Ciudades del mundo">
-            <p>Descubre grandes ciudades con asistencia premium.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/parto.png" alt="Emergencias médicas">
-            <p>Cobertura de emergencias médicas durante tu viaje.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/vanlife.png" alt="Vanlife viajes">
-            <p>Road trips con asistencia internacional garantizada.</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/img/hospital.png" alt="Hospital internacional">
-            <p>Acceso a hospitales y atención médica de calidad.</p>
-        </div>
-
-    </div>
-</section>
-
-    <img src="assets/img/logo.png" class="mini-logo" alt="logo">
-    <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
