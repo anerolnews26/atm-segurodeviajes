@@ -1,360 +1,104 @@
-/* ------------------------------------------- */
-/*               ATM CORE STYLES              */
-/* ------------------------------------------- */
+/* =========================
+   ATM — styles.css (PRO)
+   ========================= */
 
-:root {
-    --color-primary: #0a7cf4;
-    --color-secondary: #ff7e29;
-    --color-dark: #1a1a1a;
-    --color-light: #ffffff;
-    --color-gray: #f3f4f6;
+:root{
+  --primary: #0a7cf4;
+  --accent: #ff7e29;
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --dark: #0f1724;
+  --card-shadow: 0 8px 30px rgba(2,6,23,0.08);
 
-    --radius-lg: 16px;
-    --radius-md: 10px;
-
-    --shadow-soft: 0 4px 15px rgba(0,0,0,0.15);
-    --shadow-card: 0 6px 20px rgba(0,0,0,0.18);
-
-    --transition: 0.25s ease-in-out;
+  --radius-lg: 16px;
+  --radius-sm: 8px;
+  --max-width: 1200px;
+  --transition: 0.28s ease;
+  font-size: 16px;
 }
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--dark);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100;height:auto}
+
+/* ---------------- HEADER ---------------- */
+.site-header{position:sticky;top:0;background:var(--bg);box-shadow:0 6px 20px rgba(2,6,23,0.04);z-index:100}
+.header-container{max-width:var(--max-width);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{height:48px;width:auto}
+.nav-toggle{display:none}
+.main-nav{display:flex;align-items:center;gap:18px}
+.nav-link{color:var(--dark);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px}
+.nav-link:hover,.nav-link.active{color:var(--primary);background:rgba(10,124,244,0.06)}
+.lang-btn{border:1px solid rgba(10,124,244,0.12);background:transparent;padding:6px 10px;border-radius:10px;cursor:pointer}
+
+/* ---------------- HERO ---------------- */
+.hero{position:relative;min-height:64vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;filter:brightness(0.65)}
+.hero-content{position:relative;z-index:2;max-width:980px;padding:36px;color:#fff}
+.hero-content h1{font-size:clamp(28px,4vw,42px);margin-bottom:12px;font-weight:800}
+.hero-content p{font-size:clamp(14px,1.4vw,18px);opacity:0.95;margin-bottom:18px}
+.btn-cta{display:inline-block;padding:12px 20px;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(10,124,244,0.14)}
+.btn-cta:hover{transform:translateY(-3px);transition:var(--transition)}
+
+/* ---------------- VALUE GRID ---------------- */
+.value-grid{max-width:var(--max-width);margin:48px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.value-card{background:#fff;border-radius:14px;padding:20px;text-align:center;box-shadow:var(--card-shadow)}
+.value-card img{width:56px;height:56px;margin:0 auto 12px;object-fit:contain}
+.value-card h3{font-size:1.1rem;margin-bottom:8px}
+
+/* ---------------- GALLERY / CARRUSEL ---------------- */
+.services-gallery{max-width:var(--max-width);margin:48px auto;padding:20px}
+.services-gallery h2{text-align:center;margin-bottom:18px;font-size:1.6rem}
+.gallery-controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+.gallery-controls button{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 10px;border-radius:8px;cursor:pointer}
+.gallery-carousel{display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;scroll-behavior:smooth}
+.gallery-carousel::-webkit-scrollbar{height:8px}
+.gallery-carousel::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:10px}
+.gallery-item{flex:0 0 280px;background:#fff;border-radius:14px;padding:12px;box-shadow:var(--card-shadow);transition:transform var(--transition)}
+.gallery-item:hover{transform:translateY(-6px)}
+.gallery-item img{width:100%;height:170px;object-fit:cover;border-radius:10px}
+.gallery-item p{margin-top:10px;font-weight:700;color:var(--dark);font-size:0.98rem}
+
+/* ---------------- PLANS PREVIEW ---------------- */
+.plans-preview{max-width:var(--max-width);margin:48px auto;padding:0 20px}
+.plan-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.plan-card{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--card-shadow);text-align:left}
+.plan-card img{border-radius:10px;height:160px;object-fit:cover;width:100%}
+.plan-card h3{margin:12px 0 6px}
+.plan-price{font-weight:800;color:var(--primary);margin-bottom:8px}
+.plan-card p{color:var(--muted)}
+
+/* ---------------- PLANS PAGE / HOW IT WORKS ---------------- */
+.plans-container{max-width:var(--max-width);margin:36px auto;padding:0 20px}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.plan-media img{width:100%;border-radius:12px}
+.plan-info{padding:6px 0}
+.plan-benefits li{margin:8px 0}
+.how-container{max-width:var(--max-width);margin:36px auto;padding:0 20px}
+.steps-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.step{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow)}
+
+/* ---------------- FOOTER ---------------- */
+footer{background:var(--dark);color:#fff;padding:30px 20px;margin-top:40px;text-align:center}
+.footer-inner{max-width:var(--max-width);margin:0 auto}
+.mini-logo{height:42px;margin-bottom:12px}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width:920px){
+  .plan-grid{grid-template-columns:1fr}
+  .hero{min-height:56vh}
+  .hero-content{padding:24px}
 }
 
-body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #ffffff;
-    color: #222;
-    line-height: 1.6;
+@media (max-width:640px){
+  .header-container{padding:12px}
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .hero{min-height:48vh}
+  .gallery-item{flex:0 0 76%}
+  .plan-cards{grid-template-columns:1fr}
+  .plan-media{order:-1}
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* ------------------------------------------- */
-/*               HEADER + NAV                 */
-/* ------------------------------------------- */
-
-.site-header {
-    background: #ffffff;
-    box-shadow: var(--shadow-soft);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    height: 48px;
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-dark);
-    transition: var(--transition);
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    color: var(--color-primary);
-}
-
-.lang-btn {
-    padding: 6px 12px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-primary);
-    background: var(--color-light);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.lang-btn:hover {
-    background: var(--color-primary);
-    color: white;
-}
-
-/* ------------------------------------------- */
-/*                  HERO                       */
-/* ------------------------------------------- */
-
-.banner {
-    position: relative;
-    background: url('../img/hero-travel.jpg') center/cover no-repeat;
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.35)
-    );
-}
-
-.banner-content {
-    position: relative;
-    color: white;
-    max-width: 750px;
-    padding: 20px;
-}
-
-.banner h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.banner p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-.cta {
-    display: inline-block;
-    padding: 14px 28px;
-    background: var(--color-primary);
-    color: white;
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.cta:hover {
-    background: var(--color-secondary);
-}
-
-/* ------------------------------------------- */
-/*             VALUE GRID (HOME)              */
-/* ------------------------------------------- */
-
-.value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.value-card {
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 25px;
-    text-align: center;
-    box-shadow: var(--shadow-soft);
-}
-
-.value-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-/* ------------------------------------------- */
-/*                GALERÍA                      */
-/* ------------------------------------------- */
-
-.services-gallery {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.services-gallery h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-.gallery-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-}
-
-.gallery-carousel::-webkit-scrollbar {
-    height: 8px;
-}
-
-.gallery-carousel::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 10px;
-}
-
-.gallery-item {
-    flex: 0 0 260px;
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 15px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition);
-}
-
-.gallery-item:hover {
-    transform: translateY(-6px);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-}
-
-.gallery-item p {
-    margin-top: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-/* Mobile */
-@media (max-width: 500px) {
-    .gallery-item {
-        flex: 0 0 75%;
-    }
-}
-
-/* ------------------------------------------- */
-/*                  PLANS PAGE                 */
-/* ------------------------------------------- */
-
-.plans-container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.plan-card {
-    background: white;
-    padding: 25px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 25px;
-}
-
-.plan-card img {
-    width: 100%;
-    border-radius: var(--radius-md);
-}
-
-.plan-title {
-    font-size: 1.8rem;
-    margin: 15px 0 10px;
-}
-
-.plan-price {
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 15px;
-}
-
-.plan-benefits ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.plan-benefits li {
-    padding: 6px 0;
-}
-
-/* ------------------------------------------- */
-/*               HOW IT WORKS                  */
-/* ------------------------------------------- */
-
-.how-container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-.step {
-    background: white;
-    padding: 25px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 25px;
-}
-
-.step h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-/* ------------------------------------------- */
-/*                    FOOTER                   */
-/* ------------------------------------------- */
-
-footer {
-    background: var(--color-dark);
-    padding: 40px 20px;
-    text-align: center;
-    color: white;
-}
-
-.mini-logo {
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-/* ------------------------------------------- */
-/*               RESPONSIVE NAV                */
-/* ------------------------------------------- */
-
-@media (max-width: 850px) {
-
-    .main-nav {
-        gap: 18px;
-    }
-
-    .banner h1 {
-        font-size: 2.1rem;
-    }
-}
-
-@media (max-width: 650px) {
-
-    .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .banner {
-        height: 65vh;
-    }
-
-    .banner h1 {
-        font-size: 1.9rem;
-    }
-}
+/* small helper */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
