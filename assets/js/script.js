@@ -1,58 +1,103 @@
-/* ------------------------------ */
-/* LANGUAGE SYSTEM ES / EN        */
-/* ------------------------------ */
-const langToggle = document.getElementById("lang-toggle");
+/* ===========================
+   script.js — ATM PRO
+   =========================== */
 
-// Load saved language
-let currentLang = localStorage.getItem("atm-lang") || "es";
+/* ---- LANGUAGE TOGGLE ---- */
+const langToggleBtns = document.querySelectorAll('#lang-toggle, .lang-btn');
+const savedLang = localStorage.getItem('atm_lang') || 'es';
+applyLanguage(savedLang);
 
-// Apply on load
-applyTranslations(currentLang);
-
-// Switch language
-langToggle.addEventListener("click", () => {
-    currentLang = currentLang === "es" ? "en" : "es";
-    localStorage.setItem("atm-lang", currentLang);
-    applyTranslations(currentLang);
+langToggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('lang') || 'es';
+    const next = current === 'es' ? 'en' : 'es';
+    localStorage.setItem('atm_lang', next);
+    applyLanguage(next);
+  });
 });
 
-/* Main translation function */
-function applyTranslations(lang) {
-    document.querySelectorAll("[data-es]").forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-    });
-
-    // Optional: swap placeholder attributes
-    document.querySelectorAll("[data-es-placeholder]").forEach(el => {
-        el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
-    });
-
-    // Update HTML lang attribute
-    document.documentElement.setAttribute("lang", lang);
+function applyLanguage(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text !== null) el.textContent = text;
+  });
+  // update visible language button text
+  document.querySelectorAll('.lang-btn, #lang-toggle').forEach(b => {
+    b.textContent = lang === 'es' ? 'ES' : 'EN';
+  });
 }
 
-/* ------------------------------ */
-/* PERFORMANCE OPTIMIZATION       */
-/* ------------------------------ */
-document.addEventListener("DOMContentLoaded", () => {
-    // Lazy load images
-    document.querySelectorAll("img").forEach(img => {
-        img.loading = "lazy";
+/* ---- NAV MOBILE TOGGLE ---- */
+const navToggle = document.getElementById('nav-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    mainNav.style.display = expanded ? '' : 'flex';
+  });
+}
+
+/* ---- LAZYLOAD IMAGES (IntersectionObserver) ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  const lazyImages = document.querySelectorAll('img[data-src], picture source[data-srcset]');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el.tagName.toLowerCase() === 'img') {
+            if (el.dataset.src) el.src = el.dataset.src;
+            if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+            el.removeAttribute('data-src');
+            el.removeAttribute('data-srcset');
+          } else if (el.tagName.toLowerCase() === 'source') {
+            if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+            el.removeAttribute('data-srcset');
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+
+    lazyImages.forEach(img => io.observe(img));
+  } else {
+    // fallback: load all
+    lazyImages.forEach(el => {
+      if (el.dataset.src) el.src = el.dataset.src;
+      if (el.dataset.srcset) el.srcset = el.dataset.srcset;
     });
-
-    // Remove unused nodes (cleanup)
-    console.log("ATM website optimized and language applied.");
+  }
 });
+
+/* ---- GALLERY CARRUSEL (controls + auto scroll) ---- */
 const gallery = document.querySelector('.gallery-carousel');
+const prevBtn = document.getElementById('gallery-prev');
+const nextBtn = document.getElementById('gallery-next');
 
-let autoScroll = setInterval(() => {
-    gallery.scrollBy({ left: 260, behavior: 'smooth' });
-}, 3500);
+if (gallery) {
+  // scroll amount
+  const step = 300;
+  // controls
+  if (prevBtn) prevBtn.addEventListener('click', () => gallery.scrollBy({ left: -step, behavior: 'smooth' }));
+  if (nextBtn) nextBtn.addEventListener('click', () => gallery.scrollBy({ left: step, behavior: 'smooth' }));
 
-gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
-gallery.addEventListener('mouseleave', () => {
-    autoScroll = setInterval(() => {
-        gallery.scrollBy({ left: 260, behavior: 'smooth' });
-    }, 3500);
-});
+  // auto scroll
+  let auto = setInterval(() => { gallery.scrollBy({ left: step, behavior: 'smooth' }); }, 3500);
+  gallery.addEventListener('mouseenter', () => clearInterval(auto));
+  gallery.addEventListener('mouseleave', () => {
+    auto = setInterval(() => { gallery.scrollBy({ left: step, behavior: 'smooth' }); }, 3500);
+  });
 
+  // accessible keyboard navigation
+  gallery.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') gallery.scrollBy({ left: step, behavior: 'smooth' });
+    if (e.key === 'ArrowLeft') gallery.scrollBy({ left: -step, behavior: 'smooth' });
+  });
+}
+
+/* ---- PERFORMANCE HINT: prevent layout shift by reserving aspect ratio --- */
+/* Not needed here in JS because we set width/height attributes in HTML, but keep this for safety */
