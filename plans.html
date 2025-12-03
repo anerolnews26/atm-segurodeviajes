@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title data-es="Planes — ATM Seguros de Viaje" data-en="Plans — ATM Travel Insurance">Planes — ATM Seguros de Viaje</title>
-  <meta name="description" content="Detalle de planes PREMMED (USD 350,000) y SCHENMED (€200,000). Cobertura, beneficios y cómo cotizar.">
+  <title data-es="Planes — ATM Seguros" data-en="Plans — ATM Insurance">Planes — ATM Seguros</title>
+  <meta name="description" content="Planes PREMMED y SCHENMED con cobertura global y asistencia 24/7.">
 
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/script.js"></script>
@@ -14,81 +14,56 @@
 
 <header class="site-header">
   <div class="header-container">
-    <a href="index.html"><img src="assets/img/logo.png" alt="ATM logo" class="logo" width="150" height="48"></a>
+    <a href="index.html">
+      <picture>
+        <source srcset="assets/img/logo.webp" type="image/webp">
+        <img src="assets/img/logo.jpg" alt="ATM logo" class="logo" width="150" height="48">
+      </picture>
+    </a>
+
     <nav class="main-nav">
-      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="plans.html" class="active" data-es="Planes" data-en="Plans">Planes</a>
-      <a href="how-it-works.html" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
+      <a href="index.html">Inicio</a>
+      <a href="plans.html" class="active">Planes</a>
+      <a href="how-it-works.html">Cómo Funciona</a>
       <button id="lang-toggle" class="lang-btn">ES</button>
     </nav>
   </div>
 </header>
 
 <main class="plans-container">
-  <section class="plans-intro">
-    <h1 data-es="Nuestros Planes" data-en="Our Plans">Nuestros Planes</h1>
-    <p data-es="Elige el plan que mejor se adapte a tu viaje. Precios claros y cobertura inmediata." data-en="Choose the plan that best suits your trip. Clear prices and immediate coverage.">
-      Elige el plan que mejor se adapte a tu viaje. Precios claros y cobertura inmediata.
-    </p>
-  </section>
 
-  <!-- PREMMED -->
-  <article id="premmed" class="plan-card" aria-labelledby="premmed-title">
-    <div class="plan-grid">
-      <div class="plan-media">
-        <picture>
-          <source type="image/webp" srcset="assets/img/plan-premmed.webp 1x, assets/img/plan-premmed@2x.webp 2x">
-          <img src="assets/img/plan-premmed.jpg" alt="Plan PREMMED" width="800" height="520" loading="lazy">
-        </picture>
-      </div>
+  <h1>Planes de cobertura</h1>
 
-      <div class="plan-info">
-        <h2 id="premmed-title">PREMMED</h2>
-        <div class="plan-price">USD <strong>350,000</strong></div>
+  <div class="plan-card">
+    <h2>PREMMED</h2>
 
-        <ul class="plan-benefits">
-          <li>Cobertura médica internacional.</li>
-          <li>Asistencia 24/7 y repatriación.</li>
-          <li>Válido para Work & Travel y estancias largas.</li>
-          <li>COVID incluido (según condiciones).</li>
-        </ul>
+    <picture>
+      <source srcset="assets/img/icon/badge-safe.webp" type="image/webp">
+      <img src="assets/img/icon/badge-safe.jpg" alt="Badge plan seguro">
+    </picture>
 
-        <a class="btn-cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" rel="noopener noreferrer" data-es="COTIZAR PREMMED" data-en="GET PREMMED QUOTE">COTIZAR PREMMED</a>
-      </div>
-    </div>
-  </article>
+    <p>Cobertura hasta USD 350,000</p>
+  </div>
 
-  <!-- SCHENMED -->
-  <article id="schenmed" class="plan-card" aria-labelledby="schenmed-title">
-    <div class="plan-grid">
-      <div class="plan-media">
-        <picture>
-  <source srcset="assets/img/icon/badge-global.webp" type="image/webp">
-  <img src="assets/img/icon/badge-global.jpg" alt="Cobertura internacional">
-</picture>
-      </div>
+  <div class="plan-card">
+    <h2>SCHENMED</h2>
 
-      <div class="plan-info">
-        <h2 id="schenmed-title">SCHENMED</h2>
-        <div class="plan-price">€ <strong>200,000</strong></div>
+    <picture>
+      <source srcset="assets/img/icon/badge-global.webp" type="image/webp">
+      <img src="assets/img/icon/badge-global.jpg" alt="Badge cobertura global">
+    </picture>
 
-        <ul class="plan-benefits">
-          <li>Diseñado para cumplir requisitos de Visa Schengen.</li>
-          <li>Asistencia médica y hospitalaria en Europa.</li>
-          <li>Repatriación y atención prioritaria.</li>
-          <li>Documentación válida para trámites de visa.</li>
-        </ul>
-
-        <a class="btn-cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" rel="noopener noreferrer" data-es="COTIZAR SCHENMED" data-en="GET SCHENMED QUOTE">COTIZAR SCHENMED</a>
-      </div>
-    </div>
-  </article>
+    <p>Cobertura hasta €200,000</p>
+  </div>
 
 </main>
 
 <footer>
   <div class="footer-inner">
-    <img src="assets/img/logo.png" alt="ATM logo" class="mini-logo" width="120" height="36">
+    <picture>
+      <source srcset="assets/img/logo.webp" type="image/webp">
+      <img src="assets/img/logo.jpg" alt="ATM logo" class="mini-logo" width="120" height="36">
+    </picture>
     <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
   </div>
 </footer>
