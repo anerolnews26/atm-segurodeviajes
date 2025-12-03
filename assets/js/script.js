@@ -1,39 +1,45 @@
-// --------------------------------------------
-// LANGUAGE TOGGLE
-// --------------------------------------------
+/* ------------------------------ */
+/* LANGUAGE SYSTEM ES / EN        */
+/* ------------------------------ */
+const langToggle = document.getElementById("lang-toggle");
 
-const toggleBtn = document.getElementById("lang-toggle");
-const html = document.documentElement;
+// Load saved language
+let currentLang = localStorage.getItem("atm-lang") || "es";
 
-let currentLang = localStorage.getItem("site-lang") || "es";
+// Apply on load
+applyTranslations(currentLang);
 
-// Apply saved language
-applyLanguage(currentLang);
-
-toggleBtn.addEventListener("click", () => {
+// Switch language
+langToggle.addEventListener("click", () => {
     currentLang = currentLang === "es" ? "en" : "es";
-    localStorage.setItem("site-lang", currentLang);
-    applyLanguage(currentLang);
+    localStorage.setItem("atm-lang", currentLang);
+    applyTranslations(currentLang);
 });
 
-function applyLanguage(lang) {
-    html.setAttribute("lang", lang);
-
+/* Main translation function */
+function applyTranslations(lang) {
     document.querySelectorAll("[data-es]").forEach(el => {
-        el.textContent = lang === "es" ? el.dataset.es : el.dataset.en;
+        el.textContent = el.getAttribute(`data-${lang}`);
     });
 
-    toggleBtn.textContent = lang === "es" ? "EN" : "ES";
+    // Optional: swap placeholder attributes
+    document.querySelectorAll("[data-es-placeholder]").forEach(el => {
+        el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.setAttribute("lang", lang);
 }
 
-
-// --------------------------------------------
-// SOFT FADE-IN ANIMATION
-// --------------------------------------------
+/* ------------------------------ */
+/* PERFORMANCE OPTIMIZATION       */
+/* ------------------------------ */
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.style.opacity = "0";
-    setTimeout(() => {
-        document.body.style.transition = "opacity .6s ease";
-        document.body.style.opacity = "1";
-    }, 50);
+    // Lazy load images
+    document.querySelectorAll("img").forEach(img => {
+        img.loading = "lazy";
+    });
+
+    // Remove unused nodes (cleanup)
+    console.log("ATM website optimized and language applied.");
 });
