@@ -1,139 +1,360 @@
-/* -------------------- */
-/* RESET & BASE GLOBAL  */
-/* -------------------- */
+/* ------------------------------------------- */
+/*               ATM CORE STYLES              */
+/* ------------------------------------------- */
+
+:root {
+    --color-primary: #0a7cf4;
+    --color-secondary: #ff7e29;
+    --color-dark: #1a1a1a;
+    --color-light: #ffffff;
+    --color-gray: #f3f4f6;
+
+    --radius-lg: 16px;
+    --radius-md: 10px;
+
+    --shadow-soft: 0 4px 15px rgba(0,0,0,0.15);
+    --shadow-card: 0 6px 20px rgba(0,0,0,0.18);
+
+    --transition: 0.25s ease-in-out;
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: "Inter", system-ui, sans-serif;
-    color: #1a1a1a;
+    font-family: "Inter", Arial, sans-serif;
     background: #ffffff;
+    color: #222;
     line-height: 1.6;
 }
 
-/* -------------------- */
-/* HEADER / NAVBAR      */
-/* -------------------- */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ------------------------------------------- */
+/*               HEADER + NAV                 */
+/* ------------------------------------------- */
+
 .site-header {
     background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    padding: 12px 0;
+    box-shadow: var(--shadow-soft);
     position: sticky;
     top: 0;
     z-index: 999;
 }
 
 .header-container {
-    width: 92%;
+    max-width: 1200px;
     margin: auto;
-    max-width: 1250px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    width: 150px;
-    height: auto;
+    height: 48px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .main-nav a {
-    margin: 0 14px;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--color-dark);
+    transition: var(--transition);
 }
+
+.main-nav a:hover,
 .main-nav a.active {
-    color: #0077ff;
-}
-.main-nav a:hover {
-    color: #005fcc;
+    color: var(--color-primary);
 }
 
 .lang-btn {
-    background: #0077ff;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-primary);
+    background: var(--color-light);
     cursor: pointer;
-    transition: .3s;
-}
-.lang-btn:hover {
-    background: #005fcc;
+    transition: var(--transition);
 }
 
-/* -------------------- */
-/* HERO / BANNER        */
-/* -------------------- */
+.lang-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* ------------------------------------------- */
+/*                  HERO                       */
+/* ------------------------------------------- */
+
 .banner {
     position: relative;
-    background: url("../img/hero-travel.jpg") center/cover no-repeat;
+    background: url('../img/hero-travel.jpg') center/cover no-repeat;
     height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .banner-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.35)
+    );
 }
 
 .banner-content {
     position: relative;
-    text-align: center;
-    max-width: 800px;
+    color: white;
+    max-width: 750px;
     padding: 20px;
 }
 
-.banner-content h1 {
-    color: #fff;
-    font-size: 2.7rem;
+.banner h1 {
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
-.banner-content p {
-    color: #e5e5e5;
+.banner p {
     font-size: 1.2rem;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 .cta {
-    background: #ff7b00;
+    display: inline-block;
     padding: 14px 28px;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-md);
     font-size: 1rem;
-    transition: .3s;
-}
-.cta:hover {
-    background: #e46b00;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-/* -------------------- */
-/* VALUE GRID           */
-/* -------------------- */
+.cta:hover {
+    background: var(--color-secondary);
+}
+
+/* ------------------------------------------- */
+/*             VALUE GRID (HOME)              */
+/* ------------------------------------------- */
+
 .value-grid {
-    width: 92%;
-    margin: 60px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .value-card {
-    background: #f9f9f9;
-    padding: 22px;
-    border-radius: 14px;
-    b
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------- */
+/*                GALERÍA                      */
+/* ------------------------------------------- */
+
+.services-gallery {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services-gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.gallery-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-carousel::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+}
+
+.gallery-item {
+    flex: 0 0 260px;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.gallery-item p {
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .gallery-item {
+        flex: 0 0 75%;
+    }
+}
+
+/* ------------------------------------------- */
+/*                  PLANS PAGE                 */
+/* ------------------------------------------- */
+
+.plans-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.plan-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 25px;
+}
+
+.plan-card img {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+.plan-title {
+    font-size: 1.8rem;
+    margin: 15px 0 10px;
+}
+
+.plan-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.plan-benefits ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.plan-benefits li {
+    padding: 6px 0;
+}
+
+/* ------------------------------------------- */
+/*               HOW IT WORKS                  */
+/* ------------------------------------------- */
+
+.how-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.step {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 25px;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------- */
+/*                    FOOTER                   */
+/* ------------------------------------------- */
+
+footer {
+    background: var(--color-dark);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.mini-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------- */
+/*               RESPONSIVE NAV                */
+/* ------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .banner h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 65vh;
+    }
+
+    .banner h1 {
+        font-size: 1.9rem;
+    }
+}
