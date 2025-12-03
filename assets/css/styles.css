@@ -1,367 +1,314 @@
-/* ================================
-   ATM SEGUROS DE VIAJE – MAIN CSS
-   Unificado + Mejorado
-   ================================ */
-
-/* ---------- ROOT VARIABLES ---------- */
-:root{
-  --bg:#ffffff;
-  --brand:#0b5bb6;        /* azul corporativo */
-  --accent:#f2994a;       /* naranja premium */
-  --muted:#6b7280;
-  --card:#ffffff;
-  --radius:12px;
-  --max-width:1100px;
-  --gap:20px;
-  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color-scheme: light;
+/* ----------------------------------------------------
+   RESET & BASE
+---------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{box-sizing:border-box}
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:#111;
-  height:100%;
-}
-img{
-  max-width:100%;
-  display:block;
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7f9fc;
+    color: #1b1b1b;
+    line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
 
-/* =========================================
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul { list-style: none; }
+
+/* ----------------------------------------------------
    HEADER
-========================================= */
-.site-header{
-  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-  position:sticky;
-  top:0;
-  z-index:50;
-  border-bottom:1px solid #eee;
+---------------------------------------------------- */
+
+.site-header {
+    background: white;
+    width: 100%;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.header-container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 20px;
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo{
-  height:44px;
-  width:auto;
+.logo {
+    width: 150px;
 }
 
-.main-nav{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
-.main-nav a{
-  color:#111;
-  text-decoration:none;
-  padding:8px 10px;
-  border-radius:8px;
-  font-weight:600;
+.main-nav a {
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: .3s;
 }
 
-.main-nav a.active{
-  background:rgba(11,91,182,0.08);
-  color:var(--brand);
+.main-nav a:hover,
+.main-nav .active {
+    color: #0077ff;
 }
 
-.lang-btn{
-  background:transparent;
-  border:1px solid #e6e6e6;
-  padding:8px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
+.lang-btn {
+    background: #0077ff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
 }
 
-
-
-/* =========================================
-   HERO SECTION
-========================================= */
-.hero{
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:28px 16px;
-  background:#f6fbff;
-  min-height:420px;
+.lang-btn:hover {
+    background: #005bcc;
 }
 
-.hero-img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.75) saturate(0.95);
-  z-index:0;
+/* ----------------------------------------------------
+   HERO
+---------------------------------------------------- */
+.banner {
+    position: relative;
+    height: 80vh;
+    background: url('../img/hero-travel.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:1100px;
-  margin:40px auto;
-  padding:40px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:18px;
-  color:#ffffff;
-  text-shadow:0 4px 18px rgba(2,6,23,0.35);
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
 }
 
-.hero-content h1{
-  font-size:clamp(26px,4vw,42px);
-  margin:0;
-  color:#fff;
+.banner-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
 }
 
-.hero-content p{
-  margin:0;
-  color:rgba(255,255,255,0.95);
-  font-size:clamp(14px,1.6vw,18px);
+.banner h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 14px;
 }
 
-.cta{
-  display:inline-block;
-  background:var(--brand);
-  color:#fff;
-  padding:12px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  box-shadow:0 8px 24px rgba(11,91,182,0.18);
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 22px;
 }
 
-
-
-/* =========================================
-   WHY-CHOOSE SECTION (BENEFICIOS)
-========================================= */
-.why-choose{
-  max-width:var(--max-width);
-  margin:36px auto;
-  padding:28px 16px;
-  text-align:center;
+.cta {
+    background: #ff8800;
+    padding: 14px 22px;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+    transition: .3s;
 }
 
-.why-choose h2{
-  font-size:20px;
-  margin:0 0 18px;
+.cta:hover {
+    background: #cc6c00;
 }
 
-.benefits-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  align-items:start;
+/* Small CTA */
+.small-cta {
+    padding: 10px 16px;
+    font-size: .95rem;
 }
 
-.benefit{
-  background:var(--card);
-  padding:18px;
-  border-radius:12px;
-  display:flex;
-  gap:12px;
-  align-items:center;
-  justify-content:flex-start;
-  box-shadow:0 6px 18px rgba(13,38,59,0.04);
-  border:1px solid rgba(10,10,10,0.02);
+/* ----------------------------------------------------
+   VALUE GRID (HOME, SI NECESITAS MÁS LUEGO AGREGO)
+---------------------------------------------------- */
+
+.value-grid {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 24px;
 }
 
-.benefit img{
-  width:46px;
-  height:46px;
-  object-fit:contain;
+.value-card {
+    background: white;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
-.benefit p{
-  margin:0;
-  font-weight:600;
-  color:#123;
+/* ----------------------------------------------------
+   PAGE HEADER
+---------------------------------------------------- */
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px 20px;
 }
 
-
-
-/* =========================================
-   PLANS PREVIEW
-========================================= */
-.plans-preview{
-  background:linear-gradient(180deg,#ffffff,#fbfdff);
-  padding:32px 16px;
+.page-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
 }
 
-.plans-preview h2{
-  text-align:center;
-  margin:0 0 22px;
+.page-header p {
+    font-size: 1.1rem;
+    margin-top: 8px;
 }
 
-.plan-cards{
-  max-width:var(--max-width);
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-  align-items:stretch;
+/* ----------------------------------------------------
+   PLANES
+---------------------------------------------------- */
+
+.plans-section {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-.plan-card{
-  background:linear-gradient(180deg,#fff,#f8fbff);
-  padding:18px;
-  border-radius:14px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  align-items:flex-start;
-  box-shadow:0 10px 30px rgba(11,91,182,0.06);
-  border:1px solid rgba(11,91,182,0.06);
+.plan-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    padding: 24px;
+    text-align: center;
+    transition: .3s;
 }
 
-.plan-card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:10px;
+.plan-card:hover {
+    transform: translateY(-4px);
 }
 
-.plan-card h3{
-  margin:0;
-  font-size:18px;
+.plan-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 16px;
 }
 
-.plan-card p{
-  margin:0;
-  color:var(--muted);
+.plan-price strong {
+    font-size: 1.4rem;
+    color: #0077ff;
 }
 
-.plan-card strong{
-  font-size:18px;
-  color:var(--brand);
+.plan-features {
+    margin: 20px 0;
+    text-align: left;
 }
 
-.cta-secondary{
-  display:inline-block;
-  margin-top:8px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:transparent;
-  border:1px solid #e6eefb;
-  color:var(--brand);
-  text-decoration:none;
-  font-weight:700;
+.plan-features li {
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
 }
 
+/* ----------------------------------------------------
+   STEPS (HOW IT WORKS)
+---------------------------------------------------- */
 
-
-/* =========================================
-   TRUST SECTION
-========================================= */
-.trust{
-  max-width:var(--max-width);
-  margin:34px auto;
-  padding:20px 16px;
-  text-align:center;
+.steps-section {
+    max-width: 1200px;
+    margin: 50px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-.trust-logos{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:12px;
+.step-card {
+    background: white;
+    padding: 26px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: .3s;
 }
 
-.trust-logos img{
-  width:86px;
-  height:auto;
-  object-fit:contain;
-  opacity:0.95;
+.step-card:hover {
+    transform: translateY(-6px);
 }
 
-
-
-/* =========================================
-   FINAL CTA SECTION
-========================================= */
-.cta-final{
-  background:#f3fbff;
-  padding:30px 16px;
-  text-align:center;
-  border-top:1px solid #eef6ff;
+.step-card img {
+    width: 70px;
+    margin: auto;
 }
 
-.cta-final h2{
-  margin:0 0 12px;
-  font-size:20px;
-}
-
-.cta-final .cta{
-  padding:14px 22px;
-  border-radius:12px;
-}
-
-
-
-/* =========================================
+/* ----------------------------------------------------
    FOOTER
-========================================= */
-footer{
-  border-top:1px solid #eee;
-  padding:22px 16px;
-  text-align:center;
-  background:#fff;
-  color:var(--muted);
+---------------------------------------------------- */
+
+footer {
+    background: #0a0a0a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
 }
 
-footer .mini-logo{
-  height:36px;
-  margin-bottom:8px;
+footer .mini-logo {
+    width: 130px;
+    margin: 0 auto 16px;
 }
 
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
 
-
-/* =========================================
-   RESPONSIVE RULES
-========================================= */
-@media (max-width:900px){
-  .benefits-grid{grid-template-columns:repeat(2,1fr)}
-  .plan-cards{grid-template-columns:1fr}
-  .hero-content{
-    padding:28px;
-    text-align:center;
-    align-items:center;
-  }
-  .benefit{
-    justify-content:center;
-    text-align:center;
-    flex-direction:column;
-    gap:10px;
-  }
+@media (max-width: 900px) {
+    .banner h1 {
+        font-size: 2.1rem;
+    }
+    .banner {
+        height: 65vh;
+    }
 }
 
-@media (max-width:520px){
-  .benefits-grid{grid-template-columns:1fr}
-  .header-container{padding:12px}
-  .hero-content{
-    padding:20px;
-    margin:18px 8px;
-  }
-  .hero-content h1{font-size:22px}
-  .hero-content p{font-size:14px}
-  .trust-logos img{width:64px}
-}
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 14px;
+    }
 
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .plans-section {
+        grid-template-columns: 1fr;
+    }
+}
