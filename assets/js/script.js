@@ -101,3 +101,21 @@ if (gallery) {
 
 /* ---- PERFORMANCE HINT: prevent layout shift by reserving aspect ratio --- */
 /* Not needed here in JS because we set width/height attributes in HTML, but keep this for safety */
+// ----------------------------------------
+// NAV MOBILE TOGGLE
+// ----------------------------------------
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  // Cerrar al hacer clic en un enlace
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
+  });
+}
