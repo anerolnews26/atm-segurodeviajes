@@ -1,11 +1,17 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planes ATM Seguros de Viaje</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title data-es="Planes de Asistencia al Viajero | ATM Seguros"
+          data-en="Travel Assistance Plans | ATM Insurance">
+        Planes de Asistencia al Viajero | ATM Seguros
+    </title>
+
+    <meta name="description" content="Consulta nuestros planes de asistencia al viajero: PREMMED y SCHENMED. Coberturas globales y aptas para visas.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script defer src="assets/js/script.js"></script>
 </head>
 
@@ -13,82 +19,84 @@
 
 <header class="site-header">
     <div class="header-container">
-        <img src="assets/img/logo.png" class="logo" alt="ATM logo">
-
+        <img src="assets/img/logo.png" alt="ATM Seguros" class="logo">
         <nav class="main-nav">
             <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
             <a href="plans.html" class="active" data-es="Planes" data-en="Plans">Planes</a>
             <a href="how-it-works.html" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
-            <button id="lang-toggle" class="lang-btn">EN / ES</button>
+            <button id="lang-toggle" class="lang-btn">ES/EN</button>
         </nav>
     </div>
 </header>
 
 <main>
 
-<section class="page-header">
-    <h1 data-es="Planes de Asistencia al Viajero" data-en="Travel Assistance Plans">
-        Planes de Asistencia al Viajero
-    </h1>
-    <p data-es="Elige el plan ideal según tu destino, tipo de viaje y requisitos de visa."
-       data-en="Choose the ideal plan based on your destination, trip type and visa requirements.">
-       Elige el plan ideal según tu destino, tipo de viaje y requisitos de visa.
-    </p>
-</section>
-
 <section class="plans-section">
 
-    <!-- PREMMED -->
+    <h1 class="plans-title"
+        data-es="Nuestros Planes"
+        data-en="Our Plans">
+        Nuestros Planes
+    </h1>
+
+    <!-- PLAN 1 - PREMMED -->
     <div class="plan-card">
-        <img src="assets/img/plan-premmed.png" class="plan-img" alt="PREMMED">
 
-        <h2>PREMMED</h2>
+        <img src="assets/img/plan-premmed.png" class="plan-img" alt="Plan PREMMED">
 
-        <div class="plan-price">
-            <strong>USD 350,000</strong>
+        <div class="plan-content">
+
+            <h2 data-es="Plan PREMMED" data-en="PREMMED Plan">Plan PREMMED</h2>
+
+            <span class="coverage"
+                  data-es="Cobertura: USD 350,000"
+                  data-en="Coverage: USD 350,000">
+                  Cobertura: USD 350,000
+            </span>
+
+            <ul class="plan-list">
+                <li data-es="Atención médica global 24/7" data-en="Worldwide medical care 24/7"></li>
+                <li data-es="Cobertura por accidentes" data-en="Accident coverage"></li>
+                <li data-es="Apto para visas internacionales" data-en="Visa-compliant"></li>
+                <li data-es="Repatriación sanitaria" data-en="Medical repatriation"></li>
+            </ul>
+
+            <a class="cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank"
+               data-es="COTIZAR ESTE PLAN"
+               data-en="GET QUOTE">
+                COTIZAR ESTE PLAN
+            </a>
         </div>
-
-        <ul class="plan-features">
-            <li data-es="Cobertura médica completa" data-en="Full medical coverage">
-                Cobertura médica completa
-            </li>
-            <li data-es="Apto para Work & Travel" data-en="Valid for Work & Travel">
-                Apto para Work & Travel
-            </li>
-            <li data-es="COVID incluido" data-en="COVID Included">COVID incluido</li>
-            <li data-es="Asistencia 24/7" data-en="24/7 Assistance">Asistencia 24/7</li>
-        </ul>
-
-        <a href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" class="cta small-cta"
-           data-es="Cotizar Plan" data-en="Get Quote">Cotizar Plan</a>
     </div>
 
-
-    <!-- SCHENMED -->
+    <!-- PLAN 2 - SCHENMED -->
     <div class="plan-card">
-        <img src="assets/img/plan-schenmed.jpg" class="plan-img" alt="SCHENMED">
 
-        <h2>SCHENMED</h2>
+        <img src="assets/img/plan-schenmed.jpg" class="plan-img" alt="Plan SCHENMED">
 
-        <div class="plan-price">
-            <strong>€200,000</strong>
+        <div class="plan-content">
+
+            <h2 data-es="Plan SCHENMED" data-en="SCHENMED Plan">Plan SCHENMED</h2>
+
+            <span class="coverage"
+                  data-es="Cobertura: €200,000"
+                  data-en="Coverage: €200,000">
+                  Cobertura: €200,000
+            </span>
+
+            <ul class="plan-list">
+                <li data-es="Requisitos Schengen" data-en="Schengen-compliant"></li>
+                <li data-es="Asistencia hospitalaria" data-en="Hospital assistance"></li>
+                <li data-es="Cobertura para turistas" data-en="Tourist coverage"></li>
+                <li data-es="Emergencias médicas" data-en="Emergency medical services"></li>
+            </ul>
+
+            <a class="cta" href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank"
+               data-es="COTIZAR ESTE PLAN"
+               data-en="GET QUOTE">
+                COTIZAR ESTE PLAN
+            </a>
         </div>
-
-        <ul class="plan-features">
-            <li data-es="Requisitos Visa Schengen" data-en="Schengen Visa Requirements">
-                Requisitos Visa Schengen
-            </li>
-            <li data-es="Repatriación incluida" data-en="Repatriation included">
-                Repatriación incluida
-            </li>
-            <li data-es="Cobertura hospitalaria" data-en="Hospital coverage">
-                Cobertura hospitalaria
-            </li>
-            <li data-es="Asistencia 24/7" data-en="24/7 Assistance">Asistencia 24/7</li>
-        </ul>
-
-        <a href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" class="cta small-cta"
-           data-es="Cotizar Plan" data-en="Get Quote">Cotizar Plan</a>
     </div>
 
 </section>
@@ -96,7 +104,7 @@
 </main>
 
 <footer>
-    <img src="assets/img/logo.png" alt="Mini logo" class="mini-logo">
+    <img src="assets/img/logo.png" class="mini-logo" alt="logo">
     <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
 </footer>
 
