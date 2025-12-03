@@ -1,42 +1,39 @@
-// ------------------------------
-// CAMBIO DE IDIOMA ES / EN
-// ------------------------------
+// --------------------------------------------
+// LANGUAGE TOGGLE
+// --------------------------------------------
 
-// Detectar idioma guardado o usar ES por defecto
-let currentLang = localStorage.getItem("lang") || "es";
+const toggleBtn = document.getElementById("lang-toggle");
+const html = document.documentElement;
 
-// Esperar a que cargue el DOM
-document.addEventListener("DOMContentLoaded", () => {
+let currentLang = localStorage.getItem("site-lang") || "es";
 
-  const langButton = document.getElementById("lang-toggle");
+// Apply saved language
+applyLanguage(currentLang);
 
-  if (langButton) {
-    // Mostrar el idioma alternativo
-    langButton.textContent = currentLang === "es" ? "EN" : "ES";
-
-    // Evento de cambio de idioma
-    langButton.addEventListener("click", () => {
-      currentLang = currentLang === "es" ? "en" : "es";
-      localStorage.setItem("lang", currentLang);
-      langButton.textContent = currentLang === "es" ? "EN" : "ES";
-      applyTranslations();
-    });
-  }
-
-  // Aplicar traducciones al cargar
-  applyTranslations();
+toggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem("site-lang", currentLang);
+    applyLanguage(currentLang);
 });
 
+function applyLanguage(lang) {
+    html.setAttribute("lang", lang);
 
-// ------------------------------
-// FUNCIÓN PARA TRADUCIR TEXTOS
-// ------------------------------
-function applyTranslations() {
-  document.querySelectorAll("[data-es]").forEach((el) => {
-    const text = currentLang === "es"
-      ? el.getAttribute("data-es")
-      : el.getAttribute("data-en");
+    document.querySelectorAll("[data-es]").forEach(el => {
+        el.textContent = lang === "es" ? el.dataset.es : el.dataset.en;
+    });
 
-    if (text) el.innerHTML = text;
-  });
+    toggleBtn.textContent = lang === "es" ? "EN" : "ES";
 }
+
+
+// --------------------------------------------
+// SOFT FADE-IN ANIMATION
+// --------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = "0";
+    setTimeout(() => {
+        document.body.style.transition = "opacity .6s ease";
+        document.body.style.opacity = "1";
+    }, 50);
+});
