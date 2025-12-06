@@ -111,3 +111,43 @@ document.addEventListener('click', function (e) {
     toggle.setAttribute('aria-expanded', 'false');
   }
 });
+/* NAV MOBILE ROBUST FIX - agregar al final de script.js */
+(function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (!navMenu || !navToggle) return;
+
+  // Asegura que los enlaces dentro del menú siempre naveguen (cierra primero)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // cerrar menú inmediatamente
+      navMenu.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+
+      // si el enlace tiene target _blank dejamos que abra; si no, forzamos navegación (evita que otro handler la bloquee)
+      const href = link.getAttribute('href');
+      const target = link.getAttribute('target');
+      if (href && (!target || target.toLowerCase() !== '_blank')) {
+        // pequeña demora para que cierre animación y que el click no sea interceptado
+        setTimeout(() => {
+          window.location.href = href;
+        }, 120);
+      }
+    }, {passive: true});
+  });
+
+  // Cerrar el menú si el usuario toca fuera del mismo (incluye touchstart para móviles)
+  function handleOutsideClick(e) {
+    if (!navMenu.classList.contains('show')) return;
+    const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
+    if (!isClickInside) {
+      navMenu.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  document.addEventListener('click', handleOutsideClick, {passive:true});
+  document.addEventListener('touchstart', handleOutsideClick, {passive:true});
+})();
+
