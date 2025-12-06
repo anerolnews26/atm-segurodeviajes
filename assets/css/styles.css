@@ -121,3 +121,26 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
 .coverage-note strong {
   color: #000;
 }
+.main-nav {
+  z-index: 9999;
+}
+
+.main-nav.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #nav-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+  }
+
+  #nav-menu.show {
+    pointer-events: auto;
+  }
+
+  #nav-menu:not(.show) {
+    pointer-events: none;
+  }
+}
