@@ -87,3 +87,20 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
 
 /* accessibility helper */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* --------------------------
+   Nota de cobertura (planes)
+--------------------------- */
+.coverage-note {
+  font-size: 0.9rem;
+  color: #444;
+  background: #f8f8f8;
+  padding: 10px 14px;
+  border-left: 3px solid #007bff;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  line-height: 1.45;
+}
+.coverage-note strong {
+  color: #000;
+}
