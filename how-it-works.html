@@ -3,68 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title data-es="Cómo Funciona — ATM Seguros" data-en="How It Works — ATM Insurance">Cómo Funciona — ATM Seguros</title>
-  <meta name="description" content="Proceso simple: elige tu plan, completa datos y recibe tu póliza. Asistencia 24/7.">
-
+  <title>Cómo funciona — ATM Seguros</title>
+  <meta name="description" content="En 3 pasos: elige plan, completa datos y recibe tu póliza.">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/script.js"></script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html">
+        <picture>
+          <source srcset="assets/img/webp/logo.webp" type="image/webp">
+          <img src="assets/img/jpg/logo.jpg" alt="ATM logo" class="logo">
+        </picture>
+      </a>
 
-<header class="site-header">
-  <div class="header-container">
-    <a href="index.html">
-      <picture>
-        <source srcset="assets/img/logo.webp" type="image/webp">
-        <img src="assets/img/logo.jpg" alt="ATM logo" class="logo" width="150" height="48">
-      </picture>
-    </a>
+      <button id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">☰</button>
 
-    <nav class="main-nav">
-      <a href="index.html">Inicio</a>
-      <a href="plans.html">Planes</a>
-      <a href="how-it-works.html" class="active">Cómo Funciona</a>
-      <button id="lang-toggle" class="lang-btn">ES</button>
-    </nav>
-  </div>
-</header>
+      <nav id="nav-menu" class="main-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="plans.html">Planes</a></li>
+          <li><a href="how-it-works.html" class="active">Cómo Funciona</a></li>
+        </ul>
+      </nav>
 
-<main class="how-container">
-  <section class="hiw-intro">
+      <div class="actions">
+        <button id="lang-toggle" class="lang-btn">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="how-container container">
     <h1>Cómo funciona</h1>
-    <p>En 3 pasos simples tendrás tu póliza y cobertura.</p>
-  </section>
+    <div class="steps-section">
+      <article class="step">
+        <h3>1. Elige un plan</h3>
+        <p>Compara PREMMED y SCHENMED según tus necesidades.</p>
+      </article>
+      <article class="step">
+        <h3>2. Completa tus datos</h3>
+        <p>Formulario sencillo y seguro para emitir tu póliza.</p>
+      </article>
+      <article class="step">
+        <h3>3. Recibe tu póliza</h3>
+        <p>Recibirás la póliza por email lista para usar en tu viaje.</p>
+      </article>
+    </div>
+  </main>
 
-  <section class="steps-section">
+  <footer>
+    <div class="container footer-inner">
+      <picture>
+        <source srcset="assets/img/webp/logo.webp" type="image/webp">
+        <img src="assets/img/jpg/logo.jpg" alt="ATM logo" class="mini-logo" width="120" height="36">
+      </picture>
+      <p>&copy; <span id="year-hiw">2025</span> ATM Seguros de Viaje.</p>
+    </div>
+  </footer>
 
-    <article class="step">
-      <h3>1. Elige un plan</h3>
-      <p>Compara PREMMED y SCHENMED según tus necesidades.</p>
-    </article>
-
-    <article class="step">
-      <h3>2. Completa tus datos</h3>
-      <p>Un formulario sencillo y seguro para emitir tu póliza.</p>
-    </article>
-
-    <article class="step">
-      <h3>3. Recibe tu póliza</h3>
-      <p>La recibirás por email lista para usar en tu viaje.</p>
-    </article>
-
-  </section>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <picture>
-      <source srcset="assets/img/logo.webp" type="image/webp">
-      <img src="assets/img/logo.jpg" alt="ATM logo" class="mini-logo" width="120" height="36">
-    </picture>
-    <p>&copy; 2025 ATM Seguros de Viaje. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
+  <script>document.getElementById('year-hiw').textContent = new Date().getFullYear();</script>
 </body>
 </html>
