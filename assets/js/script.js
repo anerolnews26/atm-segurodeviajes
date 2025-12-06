@@ -98,3 +98,16 @@ function initGallery() {
     if (e.key === 'ArrowLeft') gallery.scrollBy({ left: -step, behavior: 'smooth' });
   });
 }
+/* FIX PARA MENÚ EN MÓVIL */
+document.addEventListener('click', function (e) {
+  const nav = document.getElementById('nav-menu');
+  const toggle = document.getElementById('nav-toggle');
+
+  // si haces clic fuera del menú → cerrarlo
+  if (nav.classList.contains('show') &&
+      !nav.contains(e.target) &&
+      e.target !== toggle) {
+    nav.classList.remove('show');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+});
