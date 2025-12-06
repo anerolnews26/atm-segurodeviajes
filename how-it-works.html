@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cómo funciona — ATM Seguros</title>
-  <meta name="description" content="En 3 pasos: elige plan, completa datos y recibe tu póliza.">
+
+  <meta name="description" content="Cómo funciona ATM Seguros: elige tu plan, completa tus datos, paga de forma segura y recibe tu póliza lista para viajar.">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/script.js"></script>
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-wrapper">
+
       <a href="index.html">
         <picture>
           <source srcset="assets/img/webp/logo.webp" type="image/webp">
@@ -20,7 +25,7 @@
 
       <button id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">☰</button>
 
-      <nav id="nav-menu" class="main-nav" role="navigation">
+      <nav id="nav-menu" class="main-nav">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="plans.html">Planes</a></li>
@@ -34,34 +39,73 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="how-container container">
     <h1>Cómo funciona</h1>
+
     <div class="steps-section">
+
+      <!-- Step 1 -->
       <article class="step">
-        <h3>1. Elige un plan</h3>
-        <p>Compara PREMMED y SCHENMED según tus necesidades.</p>
+        <h3>1. Elige tu plan ideal</h3>
+        <p>
+          Compara nuestros planes <strong>PREMMED</strong> y <strong>SCHENMED</strong> y selecciona el que mejor se adapte a tu viaje.
+        </p>
       </article>
+
+      <!-- Step 2 -->
       <article class="step">
         <h3>2. Completa tus datos</h3>
-        <p>Formulario sencillo y seguro para emitir tu póliza.</p>
+        <p>
+          Rellena un formulario simple y seguro para comenzar la emisión de tu póliza.
+        </p>
       </article>
+
+      <!-- Step 3 -->
       <article class="step">
-        <h3>3. Recibe tu póliza</h3>
-        <p>Recibirás la póliza por email lista para usar en tu viaje.</p>
+        <h3>3. Recibe un link de pago 100% seguro</h3>
+        <p>
+          Te enviaremos un enlace de pago verificado. Una vez realizado el pago, recibirás tu
+          <strong>factura oficial</strong>.
+        </p>
+      </article>
+
+      <!-- Step 4 -->
+      <article class="step">
+        <h3>4. Recibe tu póliza lista para usar</h3>
+        <p>
+          Te enviaremos tu póliza por email, completamente válida para viajar y presentar en cualquier control migratorio.
+        </p>
       </article>
     </div>
+
+    <!-- NOTE -->
+    <div class="note-box">
+      <strong>Nota importante:</strong>
+      <p>
+        ¿Quieres aprovechar el <strong>precio del dólar de hoy</strong> pero activar tu póliza más adelante?
+        ¡Sin problema!  
+        Puedes comprarla hoy y la <strong>activamos el día que tú nos indiques</strong>.
+      </p>
+    </div>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <picture>
         <source srcset="assets/img/webp/logo.webp" type="image/webp">
         <img src="assets/img/jpg/logo.jpg" alt="ATM logo" class="mini-logo" width="120" height="36">
       </picture>
+
       <p>&copy; <span id="year-hiw">2025</span> ATM Seguros de Viaje.</p>
     </div>
   </footer>
 
-  <script>document.getElementById('year-hiw').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year-hiw').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
