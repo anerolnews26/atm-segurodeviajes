@@ -119,49 +119,10 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
 .coverage-note strong {
   color: #000;
 }
-.main-nav {
-  z-index: 9999;
-}
-  #nav-menu.show {
-    pointer-events: auto;
-  }
 
-  #nav-menu:not(.show) {
-    pointer-events: none;
-  }
+/* ============== NAV MOBILE FIX ============== */
 
-/* NAV MOBILE FIX - pegar al final de styles.css */
-#nav-menu {
-  display: none;
-  position: fixed;
-  inset: 68px 16px auto 16px; /* top offset to sit below header */
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 12px 30px rgba(2,6,23,0.08);
-  z-index: 9999;
-  pointer-events: none; /* no bloquea cuando está oculto */
-}
-
-#nav-menu.show {
-  display: block;
-  pointer-events: auto;
-}
-
-/* Asegurar que los links sean clicables y columna vertical */
-#nav-menu ul { display: flex; flex-direction: column; gap: 8px; }
-#nav-menu ul li a { display: inline-block; padding: 8px 12px; }
-
-/* En pantallas grandes, el nav vuelve a su comportamiento original */
-@media (min-width: 641px) {
-  #nav-menu { position: static; display: block; inset: auto; background: transparent; padding: 0; box-shadow: none; pointer-events: auto; }
-  #nav-menu ul { flex-direction: row; gap: 18px; }
-}
-
-/* =========================
-   FINAL NAV MOBILE FIX
-   ========================= */
-
+/* Estilos base del menú móvil */
 #nav-menu {
   display: none;
   position: fixed;
@@ -181,7 +142,7 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
   pointer-events: auto;
 }
 
-/* Los links se muestran en columna */
+/* Links en columna */
 #nav-menu ul {
   display: flex;
   flex-direction: column;
@@ -194,7 +155,7 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
   font-weight: 600;
 }
 
-/* Desktop */
+/* ========== Desktop ========== */
 @media (min-width: 641px) {
   #nav-menu {
     display: block;
