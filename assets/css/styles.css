@@ -129,7 +129,7 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
   #nav-menu:not(.show) {
     pointer-events: none;
   }
-}
+
 /* NAV MOBILE FIX - pegar al final de styles.css */
 #nav-menu {
   display: none;
