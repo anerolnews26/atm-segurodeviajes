@@ -120,39 +120,50 @@ footer{background:#f8fafc;padding:36px 0;margin-top:36px}
   color: #000;
 }
 
-/* ============== NAV MOBILE FIX ============== */
+/* NAV — comportamiento correcto */
+#nav-toggle { display: none; }
 
-/* Estilos base del menú móvil */
-#nav-menu {
-  display: none;
-  position: fixed;
-  top: 70px;
-  right: 16px;
-  left: 16px;
-  background: #fff;
-  padding: 14px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(2,6,23,0.12);
-  z-index: 9999;
-  pointer-events: none;
+/* Vista escritorio */
+@media (min-width: 641px) {
+  #nav-menu {
+    display: block !important;
+    position: static;
+    background: none;
+    box-shadow: none;
+    pointer-events: auto;
+  }
+  #nav-menu ul {
+    flex-direction: row;
+  }
 }
 
-#nav-menu.show {
-  display: block;
-  pointer-events: auto;
-}
+/* Vista móvil */
+@media (max-width: 640px) {
+  #nav-toggle { display: block; }
 
-/* Links en columna */
-#nav-menu ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  #nav-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 16px;
+    left: 16px;
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(2,6,23,0.12);
+    z-index: 9999;
+    pointer-events: none;
+  }
 
-#nav-menu ul li a {
-  padding: 10px;
-  display: block;
-  font-weight: 600;
+  #nav-menu.show {
+    display: block;
+    pointer-events: auto;
+  }
+
+  #nav-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 
