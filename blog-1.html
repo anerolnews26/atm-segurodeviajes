@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Por qué es importante viajar con seguro de viaje?</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #004aad;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background: #004aad;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background: #003a85;
+    }
+
+    .lang-toggle {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .lang-toggle button {
+      padding: 5px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #e1e1e1;
+    }
+
+    .lang-toggle button.active {
+      background: #004aad;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <h2>Blog – ATM Seguro de Viajes</h2>
+</header>
+
+<div class="content">
+
+  <!-- SWITCH IDIOMA -->
+  <div class="lang-toggle">
+    <button id="btn-es" class="active">ES</button>
+    <button id="btn-en">EN</button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <article>
+
+    <h1 data-es="¿Por qué es importante viajar con seguro de viaje según embajadas y cancillerías del mundo?"
+        data-en="Why is it important to travel with travel insurance according to embassies and foreign ministries?">
+      ¿Por qué es importante viajar con seguro de viaje según embajadas y cancillerías del mundo?
+    </h1>
+
+    <p data-es="Viajar puede ser una de las experiencias más enriquecedoras de la vida..."
+       data-en="Traveling can be one of the most enriching experiences in life...">
+      Viajar puede ser una de las experiencias más enriquecedoras de la vida. Pero toda aventura implica riesgos: problemas de salud, imprevistos logísticos, accidentes, pérdida de documentos o equipaje, e incluso situaciones que obligan a cambiar tus planes sin aviso.
+      Por eso, las embajadas y cancillerías de prácticamente todos los países recomiendan un punto clave: viajar siempre con seguro de viaje internacional.
+    </p>
+
+    <p data-es="A diferencia de lo que muchos creen..."
+       data-en="Contrary to what many believe...">
+      A diferencia de lo que muchos creen, una embajada no cubre costos médicos, traslados, hospitalizaciones ni repatriaciones. Su función es diplomática, no asistencial. Los gobiernos reiteran que la protección del viajero depende del seguro privado que contrate antes de salir de su país.
+    </p>
+
+    <h3 data-es="Lo que recomiendan las embajadas sobre seguros de viaje"
+        data-en="What embassies recommend about travel insurance">
+      Lo que recomiendan las embajadas sobre seguros de viaje
+    </h3>
+
+    <ul>
+      <li data-es="El viajero debe contratar un seguro internacional válido para el destino."
+          data-en="Travelers must purchase international insurance valid for their destination.">
+        El viajero debe contratar un seguro internacional válido para el destino.
+      </li>
+      <li data-es="La cobertura debe incluir atención médica, accidentes y emergencias."
+          data-en="Coverage must include medical care, accidents, and emergencies.">
+        La cobertura debe incluir atención médica, accidentes y emergencias.
+      </li>
+      <li data-es="Es recomendable contar con protección ante pérdida de equipaje, retrasos y cancelaciones."
+          data-en="It is recommended to have protection for lost luggage, delays, and cancellations.">
+        Es recomendable contar con protección ante pérdida de equipaje, retrasos y cancelaciones.
+      </li>
+      <li data-es="Para regiones específicas, como Europa Schengen, la cobertura es obligatoria."
+          data-en="For specific regions, such as Schengen Europe, insurance is mandatory.">
+        Para regiones específicas, como Europa Schengen, la cobertura es obligatoria.
+      </li>
+      <li data-es="En caso de accidente, el seguro privado es quien debe responder."
+          data-en="In case of an accident, private insurance must respond.">
+        En caso de accidente, el seguro privado es quien debe responder.
+      </li>
+    </ul>
+
+    <h3 data-es="Por qué un seguro es realmente importante"
+        data-en="Why travel insurance is truly important">
+      Por qué un seguro es realmente importante
+    </h3>
+
+    <p data-es="Un accidente menor puede costar miles..."
+       data-en="Even a minor accident can cost thousands...">
+      Un accidente menor puede costar miles de dólares en otro país. Una caída, fiebre, infección estomacal o emergencia dental puede arruinar el viaje si no tienes a quién acudir.
+    </p>
+
+    <p data-es="Los planes PREMMED (global) y SCHENMED..."
+       data-en="PREMMED (global) and SCHENMED plans...">
+      Los planes PREMMED (global) y SCHENMED (Schengen) incluyen coberturas que cumplen con los requisitos que exigen gobiernos y aerolíneas.
+    </p>
+
+    <a href="https://forms.gle/ZwyxnW6yYDwMJX7x8" target="_blank" class="btn-primary" 
+      data-es="Quiero mi seguro" data-en="Get my insurance">
+      Quiero mi seguro
+    </a>
+
+  </article>
+</div>
+
+<script>
+  const btnEs = document.getElementById("btn-es");
+  const btnEn = document.getElementById("btn-en");
+  const elements = document.querySelectorAll("[data-es]");
+
+  btnEs.onclick = () => {
+    btnEs.classList.add("active");
+    btnEn.classList.remove("active");
+    elements.forEach(el => el.innerHTML = el.getAttribute("data-es"));
+  };
+
+  btnEn.onclick = () => {
+    btnEn.classList.add("active");
+    btnEs.classList.remove("active");
+    elements.forEach(el => el.innerHTML = el.getAttribute("data-en"));
+  };
+</script>
+
+</body>
+</html>
