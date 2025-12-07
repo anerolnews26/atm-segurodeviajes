@@ -115,4 +115,7 @@ function initGallery() {
   });
 
   gallery.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') gallery.scr
+    if (e.key === 'ArrowRight') gallery.scrollBy({ left: step, behavior: 'smooth' });
+    if (e.key === 'ArrowLeft') gallery.scrollBy({ left: -step, behavior: 'smooth' });
+  });
+}
